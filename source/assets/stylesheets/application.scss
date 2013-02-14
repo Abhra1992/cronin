@@ -1,0 +1,9 @@
+﻿/*
+ *= require foundation_and_overrides
+ */
+@import 'base';
+header,
+view,
+footer{
+	@include innerRow();
+}

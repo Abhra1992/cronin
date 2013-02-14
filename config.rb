@@ -2,6 +2,9 @@
 # Compass
 ###
 
+# Require Zurb Foundation SCSS
+require 'zurb-foundation'
+
 # Susy grids in Compass
 # First: gem install susy
 # require 'susy'
@@ -14,6 +17,12 @@
 ###
 # Page options, layouts, aliases and proxies
 ###
+page '*', :layout => :application
+
+# Use Kramdown as template engine
+require 'kramdown'
+set :markdown_engine, :kramdown
+set :markdown, :layout_engine => :erb
 
 # Per-page layout changes:
 #
