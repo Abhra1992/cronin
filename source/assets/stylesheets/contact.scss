@@ -1,0 +1,5 @@
+@import 'base';
+.contact-intro,
+.contact-form-section{
+  @include column(6);
+}

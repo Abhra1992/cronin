@@ -1,21 +1,37 @@
 ---
 title: Contact
+stylesheets: contact
 ---
 <div class="contact view">
-  <h4>Get in Touch</h4>
-  <p>
-    So you want to contact me, right? Well, let's see. If you want to say hello, ask a question or 
-    share your thoughts, and succeed in the task of filling out the form below then you might just 
-    be able to do exactly that. I'll receive your message, read it, tear it up and throw it dramatically 
-    into the fire. Oh, and then I'll respond, of course. If you don't think you can handle it, you 
-    could always just pop in an email. 
-  </p>
-  <p>
-    If you are writing because you think I would be a good fit for your project, please include as 
-    much relevant detail as possible, how you see I may best be of help, and the like. For everything 
-    else, type away, my friends. Type away. 
-  </p>
-  <p>
-    Not a contact form person? Feel free to find me on Facebook, Linkedin, or Google+. 
-  </p>
+  <section class="contact-intro">
+    <h4>Get in Touch</h4>
+    <p>
+      So you want to contact me, right? Well, let's see. If you want to say hello, ask a question or 
+      share your thoughts, and succeed in the task of filling out the form to the right then you might just 
+      be able to do exactly that. I'll receive your message, read it, tear it up and throw it dramatically 
+      into the fire. Oh, and then I'll respond, of course. If you don't think you can handle it, you 
+      could always just pop in an email. 
+    </p>
+    <p>
+      If you are writing because you think I would be a good fit for your project, please include as 
+      much relevant detail as possible, how you see I may best be of help, and the like. For everything 
+      else, type away, my friends. Type away!
+    </p>
+    <p>
+      Not a contact form person? Feel free to find me on Facebook, Linkedin, or Google+. 
+    </p>
+  </section>
+  <section class="contact-form-section">
+    <% form_tag '#', :class => 'contact-form', :method => :post do %>
+      <% field_set_tag do %>
+        <%= label_tag :your_name, :class => 'first' %>
+        <%= text_field_tag :your_name %>
+        <%= label_tag :your_email, :class => 'first' %>
+        <%= text_field_tag :your_email %>
+        <%= label_tag :message %>
+        <%= text_area_tag :message %>
+        <%= submit_tag "Send", :class => 'button success small radius' %>
+      <% end %>
+    <% end %>
+  </section>
 </div>
