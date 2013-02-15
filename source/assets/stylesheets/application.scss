@@ -2,8 +2,30 @@
  *= require foundation_and_overrides
  */
 @import 'base';
+body{
+	@include column(12);
+	background: {
+		color: rgb(236, 236, 236);
+	}
+	font: {
+		//family: Consolas, 'Lucida Console', 'Monaco', 'DejaVu Sans Mono', monospace;
+	}
+}
 header,
-view,
+.view,
 footer{
 	@include innerRow();
+}
+.site-nav-title{
+	font-family: Consolas;
+}
+.view{
+  min-height: 450px;
+}
+footer{
+	background: {
+		color: rgb(201, 180, 159);
+	}
+	padding: 10px;
+	text-align: center;
 }

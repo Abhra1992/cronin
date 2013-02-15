@@ -1,0 +1,8 @@
+@import 'base';
+.hello-intro{
+  @include column(7);
+}
+.home-social{
+  @include column(5);
+  text-align: center;
+}

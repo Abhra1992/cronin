@@ -1,0 +1,20 @@
+---
+title: Skills
+stylesheets: skills
+---
+<div class="skills view">
+  <section class="skills-intro panel radius">
+    Although I am skilled in several disciplines, I'm more of a dynamic and multi-skilled
+    Web Developer and Programmer with a passion for creating innovative stuff, exploring
+    and experimenting new things, regardless of the brief.
+  </section>
+  <section class="skills-description">
+
+  </section>
+  <section class="skills-graph">
+    <% data.skills.each do |skill, strength| %>
+    <span class="success label"><%= skill %></span>
+    <div class="nice radius progress success skill-meter"><span class="meter" style="width: <%= strength %>%"></span></div>
+    <% end %>
+  </section>
+</div>

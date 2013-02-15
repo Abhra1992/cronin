@@ -1,21 +1,23 @@
 ---
-title: Abhra
+title: Abhra Basak
+stylesheets: home
 ---
 <div class="home view">
-	<h4>Abhra Basak</h4>
-	<p>
-		Hello, there! I am a Computer Science Undergraduate in IIT Mandi. I am passionate about Web Technologies, and
-		also enjoy Programming, Football, Mathematics, Action Movies and Pop Music.
-	</p>
-	<h5>Find me in the following locations:</h5>
-	<p>
-		<ul>
-			<li><%= link_to 'GitHub', 'https://github.com/Abhra1992' %></li>
-			<li><%= link_to 'Facebook', 'https://facebook.com/abracadabra.2010' %></li>
-			<li><%= link_to 'Twitter', 'https://twitter.com/abhra_basak' %></li>
-			<li><%= link_to 'Quora', 'https://quora.com/Abhra-Basak' %></li>
-			<li><%= link_to 'LinkedIn', 'http://in.linkedin.com/in/abhrabasak' %></li>
-			<li><%= link_to 'Google+', 'http://plus.google.com' %></li>
-		</ul>
-	<p>
+  <section class="hello-intro">
+    <h4>Abhra Basak</h4>
+    <p>
+      Hey, Hi and Hello! I am a Computer Science Undergraduate in <%= link_to 'IIT Mandi', 'http://iitmandi.ac.in' %>. 
+      I am passionate about Web Technologies, and also enjoy Programming, Football, Mathematics, Action Movies and Pop Music.
+    </p>
+  </section>
+  <section class="home-social">
+    <h5>Find out what I'm up to:</h5>
+    <div class="button-bar panel">
+      <ul class="button-group radius">
+        <% data.contact.each do |contact, address| %>
+        <li><%= link_to  contact, address, :class => 'button radius small' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
 </div>

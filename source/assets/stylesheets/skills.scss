@@ -1,0 +1,15 @@
+@import 'base';
+.skills-intro,
+.skills-description,
+.skills-graph{
+  @include column(4);
+  margin: 20px 0;
+}
+.skills-intro{  
+  line-height: 20px;
+  padding: 20px;
+  text-align: center;
+}
+div.skill-meter{
+  height: 12px;
+}
