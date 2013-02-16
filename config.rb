@@ -65,10 +65,15 @@ set :images_dir, 'assets/images'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  compass_config do |config|
+    config.sass_options = { :debug_info => false }
+    config.sass_options = { :line_comments => false }
+    config.output_style = :compact
+  end 
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
   # activate :cache_buster
