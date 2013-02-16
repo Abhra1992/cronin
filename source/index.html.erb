@@ -1,12 +1,16 @@
 ---
-title: Abhra Basak
+title: Home
 stylesheets: home
 ---
 <div class="home view">
+  <section class="display-pic">
+    <%= image_tag 'photo.jpg' %>
+  </section>
   <section class="hello-intro">
     <h4>Hey, Hi and Hello!</h4>
     <p>
-      My name is ABHRA BASAK. I am a 20-year old Computer Science Undergraduate in <b><%= link_to 'IIT Mandi', 'http://iitmandi.ac.in' %></b>. 
+      My name is ABHRA BASAK. I am a 20-year old Computer Science Undergraduate 
+      in <b><%= link_to 'IIT Mandi', 'http://iitmandi.ac.in' %></b> (living in Kolkata). 
       I am passionate about Web Technologies, and also enjoy Programming, Football, Mathematics, Action Movies and Pop Music.
       This is my cool website made with love.
     </p>
@@ -15,14 +19,11 @@ stylesheets: home
       Technologies and the Web. That's why I've decided to get deeply involved in 
       Web Development, which is my main focus today, and that it will be hopefully in the long term.
     </p>
-    <p>
-    
-    </p>
   </section>
   <section class="home-social">
     <h5>Find out what I'm up to:</h5>
     <div class="button-bar panel">
-      <ul class="button-group radius">
+      <ul class="block-grid three-up">
         <% data.contact.each do |contact, address| %>
         <li><%= link_to  contact, address, :class => "button radius small #{contact.downcase}" %></li>
         <% end %>

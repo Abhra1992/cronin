@@ -1,9 +1,13 @@
 @import 'base';
 .hello-intro{
-  @include column(7);
+  @include column(6);
+}
+.display-pic{
+  @include column(2);
+  margin-top: 10px;
 }
 .home-social{
-  @include column(5);
+  @include column(4);
   text-align: center;
 }
 .github{

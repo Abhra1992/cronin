@@ -1,0 +1,11 @@
+@import 'base';
+.projects-intro{
+  @include column(3);
+}
+.project-articles{
+  @include column(9);
+  margin-top: 10px;
+}
+.project{
+  margin-bottom: 10px;
+}
