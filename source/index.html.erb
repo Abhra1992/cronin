@@ -4,10 +4,19 @@ stylesheets: home
 ---
 <div class="home view">
   <section class="hello-intro">
-    <h4>Abhra Basak</h4>
+    <h4>Hey, Hi and Hello!</h4>
     <p>
-      Hey, Hi and Hello! I am a Computer Science Undergraduate in <%= link_to 'IIT Mandi', 'http://iitmandi.ac.in' %>. 
+      My name is ABHRA BASAK. I am a 20-year old Computer Science Undergraduate in <b><%= link_to 'IIT Mandi', 'http://iitmandi.ac.in' %></b>. 
       I am passionate about Web Technologies, and also enjoy Programming, Football, Mathematics, Action Movies and Pop Music.
+      This is my cool website made with love.
+    </p>
+    <p>
+      I'm always looking for ideas that might make my work more creative. I'm especially interested in Computer 
+      Technologies and the Web. That's why I've decided to get deeply involved in 
+      Web Development, which is my main focus today, and that it will be hopefully in the long term.
+    </p>
+    <p>
+    
     </p>
   </section>
   <section class="home-social">
@@ -15,7 +24,7 @@ stylesheets: home
     <div class="button-bar panel">
       <ul class="button-group radius">
         <% data.contact.each do |contact, address| %>
-        <li><%= link_to  contact, address, :class => 'button radius small' %></li>
+        <li><%= link_to  contact, address, :class => "button radius small #{contact.downcase}" %></li>
         <% end %>
       </ul>
     </div>

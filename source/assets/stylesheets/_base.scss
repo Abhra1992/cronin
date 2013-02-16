@@ -2,3 +2,10 @@
 @import 'foundation/settings';
 @import 'foundation/functions/all';
 @import 'foundation/mixins/all';
+
+@mixin social-button-colors($color, $hover-color) {
+  background: $color;
+  &:hover{
+    background: $hover-color;
+  }
+}

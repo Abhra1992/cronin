@@ -6,3 +6,21 @@
   @include column(5);
   text-align: center;
 }
+.github{
+  @include social-button-colors(rgb(140, 198, 101), rgb(30, 104, 35));
+}
+.facebook{
+  @include social-button-colors(rgb(75, 103, 161), rgb(59, 89, 152));
+}
+.twitter{
+  @include social-button-colors(rgb(0, 160, 209), rgb(6, 84, 110));
+}
+.linkedin{
+  @include social-button-colors(rgb(27, 168, 229), rgb(0, 115, 178));
+}
+.quora{
+  @include social-button-colors(rgb(168, 36, 0), rgb(168, 36, 0));
+}
+.googleplus{
+  @include social-button-colors(rgb(53, 122, 232), rgb(45, 45, 45));
+}
