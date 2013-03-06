@@ -1,0 +1,5 @@
+@import 'base';
+.credits-intro,
+.credits-components{
+  @include column(6);
+}

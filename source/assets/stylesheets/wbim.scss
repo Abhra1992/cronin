@@ -1,0 +1,7 @@
+@import 'base';
+.wbim-intro{
+  @include column(8);
+}
+.assignment-list{
+  @include column(4);
+}
