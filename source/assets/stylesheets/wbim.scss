@@ -5,3 +5,10 @@
 .assignment-list{
   @include column(4);
 }
+.assignment-description{
+  @include column(8);
+}
+figcaption{
+  text-align: center;
+  font-weight: bold;
+}

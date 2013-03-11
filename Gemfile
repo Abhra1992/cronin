@@ -5,5 +5,5 @@ gem 'kramdown'
 gem 'wdm', '~>0.0.3'
 
 group :development do
-	gem 'zurb-foundation'
+  gem 'zurb-foundation'
 end

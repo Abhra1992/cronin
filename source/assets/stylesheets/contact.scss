@@ -3,3 +3,9 @@
 .contact-form-section{
   @include column(6);
 }
+.email{
+  color: black;
+  &:hover{
+    color: purple;
+  }
+}
