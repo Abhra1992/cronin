@@ -23,7 +23,7 @@ stylesheets: home
   <section class="home-social">
     <h5>Find out what I'm up to:</h5>
     <div class="button-bar panel">
-      <ul class="block-grid three-up">
+      <ul class="social-block">
         <% data.contact.each do |contact, address| %>
         <li><%= link_to  contact, address, :class => "button radius small #{contact.downcase}" %></li>
         <% end %>

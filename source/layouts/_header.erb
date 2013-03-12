@@ -1,23 +1,32 @@
 <header>
 	<!-- Positioning the Top Bar -->
-	<div class="fixed">
+	<div>
 		<!-- Basic Needs -->
 		<nav class="top-bar">
-			<ul>
+			<ul class="title-area">
 				<li class="name"><h1 class="site-nav-title"><%= link_to 'ABHRA BASAK', '/index.html' %></h1></li>
-				<li class="toggle-topbar"><a href="#"></a></li>
+				<!--<li class="toggle-topbar"><a href="#"></a></li>-->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 			</ul>
-			<section>
+			<section class="top-bar-section">
 				<ul class="left">
+          <li class="divider"></li>
 					<li><%= link_to 'Home', '/index.html' %></li>
+          <li class="divider"></li>
 					<li><%= link_to 'Skills', '/skills.html' %></li>
+          <li class="divider"></li>
 					<li><%= link_to 'Projects', '/projects.html' %></li>
+          <li class="divider"></li>
 					<li><%= link_to 'Blog', '#' %></li>
+          <li class="divider"></li>
           <li><%= link_to 'WBIM', '/wbim/index.html' %></li>
+          <li class="divider"></li>
 					<li><%= link_to 'Contact', '/contact.html' %></li>
+          <li class="divider"></li>
 				</ul>
 
 				<ul class="right">
+          <li class="divider"></li>
 					<li><%= link_to 'Credits', '/credits.html' %></li>
 				</ul>
 			</section>

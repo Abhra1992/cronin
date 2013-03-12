@@ -1,14 +1,17 @@
 @import 'base';
 .hello-intro{
-  @include column(6);
+  @include grid-column(6, $float: left);
 }
 .display-pic{
-  @include column(2);
+  @include grid-column(2, $float: left);
   margin-top: 10px;
 }
 .home-social{
-  @include column(4);
+  @include grid-column(4, $float: left);
   text-align: center;
+}
+ul.social-block{
+  @include block-grid(3);
 }
 .github{
   @include social-button-colors(rgb(140, 198, 101), rgb(30, 104, 35));

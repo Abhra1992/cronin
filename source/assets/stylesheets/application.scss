@@ -1,20 +1,21 @@
 ﻿/*
- *= require foundation_and_overrides
+ *= require foundation
  */
 @import 'base';
 body{
-	@include column(12);
+	@include grid-column(12);
 	background: {
 		color: rgb(236, 236, 236);
 	}
 	font: {
-		family: 'Segoe UI', Helvetica, 'Liberation Sans', 'DejaVu Sans', Freesans, sans-serif;;
+		family: 'Segoe UI', Helvetica, 'Liberation Sans', 'DejaVu Sans', Freesans, sans-serif;
+    size: 14px;
 	}
 }
 header,
 .view,
 footer{
-	@include innerRow();
+	@include grid-row(nest);
 }
 .site-nav-title{
 	font-family: Helvetica;

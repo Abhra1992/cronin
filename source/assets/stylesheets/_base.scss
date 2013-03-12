@@ -1,7 +1,7 @@
 ﻿@import 'compass/css3';
-@import 'foundation/settings';
-@import 'foundation/functions/all';
-@import 'foundation/mixins/all';
+@import 'foundation/foundation-global';
+@import 'foundation/components/grid';
+@import 'foundation/components/block-grid';
 
 @mixin social-button-colors($color, $hover-color) {
   background: $color;

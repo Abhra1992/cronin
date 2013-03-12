@@ -1,5 +1,5 @@
 @import 'base';
 .credits-intro,
 .credits-components{
-  @include column(6);
+  @include grid-column(6, $float: left);
 }

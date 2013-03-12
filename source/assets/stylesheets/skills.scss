@@ -2,7 +2,7 @@
 .skills-intro,
 .skills-description,
 .skills-graph{
-  @include column(4);
+  @include grid-column(4, $float: left);
   margin: 20px 0;
 }
 .skills-intro,
@@ -10,6 +10,9 @@
   line-height: 20px;
   padding: 20px;
   text-align: center;
+}
+.skill-label{
+  display: block;
 }
 div.skill-meter{
   height: 12px;
