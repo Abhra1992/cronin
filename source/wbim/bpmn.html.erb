@@ -9,17 +9,17 @@ assignment: 1
       <h4><%= data.page.title %></h4>
       <p>
         Here, I tried out some business process models as part of the assignment.
-        My friend Shoubhik helped me out with some of these.
+        My friend <%= link_to 'Shoubhik', 'http://sites.google.com/site/shoubhikdebnath' %> helped me out with some of these.
       <p>
       <figure>
         <%= image_tag 'wbim/HardwareRetailer_1.0.png' %>
-        <figcaption>Hardware Retailer</figcaption>
+        <figcaption><%= link_to 'Hardware Retailer', 'HardwareRetailer.bpmn' %></figcaption>
       </figure>
     </article>
     <pre>
       
     </pre>
-    <%= link_to 'View XML', 'HardwareRetailer.bpmn' %>
+    <p>To save the XML files for the BPMN, right click on the caption, and select 'Save Link As.../Save Target As...'</p>
     <p>BPMN models created using <%= link_to 'BonitaSoft Open Solution', 'http://www.bonitasoft.com' %>.</p>
   </section>
   <%= partial 'assignments' %>
