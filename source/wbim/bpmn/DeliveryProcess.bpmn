@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:definitions xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di_1="http://www.omg.org/spec/DD/20100524/DI" xmlns:model="http://www.omg.org/spec/BPMN/20100524/MODEL" exporter="BonitaSoft" exporterVersion="5.9" expressionLanguage="http://groovy.codehaus.org/" targetNamespace="http://bonitasoft.com/Delivery_Process">
+  <model:collaboration id="Delivery_Process">
+    <model:documentation></model:documentation>
+    <model:participant id="Initiateur">
+      <model:documentation>Personne qui prend la premi&#xe8;re action pour d&#xe9;marrer le processus</model:documentation>
+    </model:participant>
+    <model:participant id="_uudtsI0tEeK-GZ2GDNy0MQ" name="Order lifecycle" processRef="Order_lifecycle"/>
+    <model:participant id="_uueUwI0tEeK-GZ2GDNy0MQ" name="Order lifecycle (Improved)" processRef="Order_lifecycle__Improved_"/>
+  </model:collaboration>
+  <model:process id="Order_lifecycle" name="Order lifecycle">
+    <model:documentation></model:documentation>
+    <model:startEvent id="Start" name="Start">
+      <model:documentation></model:documentation>
+    </model:startEvent>
+    <model:endEvent id="End1" name="End1">
+      <model:documentation></model:documentation>
+      <model:terminateEventDefinition id="_uudtsY0tEeK-GZ2GDNy0MQ"/>
+    </model:endEvent>
+    <model:serviceTask id="Deliver" name="Deliver">
+      <model:documentation></model:documentation>
+    </model:serviceTask>
+    <model:serviceTask id="Prepare_Command" name="Prepare Command">
+      <model:documentation></model:documentation>
+    </model:serviceTask>
+    <model:serviceTask id="Order" name="Order">
+      <model:documentation></model:documentation>
+    </model:serviceTask>
+    <model:serviceTask id="Pay" name="Pay">
+      <model:documentation></model:documentation>
+    </model:serviceTask>
+    <model:sequenceFlow id="_28wksNIGEd-mIvEyYHnHJA" sourceRef="Start" targetRef="Order">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_d4fZgNIHEd-mIvEyYHnHJA" sourceRef="Order" targetRef="Pay">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_hJeCENIHEd-mIvEyYHnHJA" sourceRef="Pay" targetRef="Prepare_Command">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_opv8oNIHEd-mIvEyYHnHJA" sourceRef="Prepare_Command" targetRef="Deliver">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_rFLdQNIHEd-mIvEyYHnHJA" sourceRef="Deliver" targetRef="End1">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+  </model:process>
+  <model:process id="Order_lifecycle__Improved_" name="Order lifecycle (Improved)">
+    <model:documentation></model:documentation>
+    <model:startEvent id="Start1" name="Start1">
+      <model:documentation></model:documentation>
+    </model:startEvent>
+    <model:parallelGateway id="Fork" name="Fork">
+      <model:documentation></model:documentation>
+    </model:parallelGateway>
+    <model:parallelGateway id="Join" name="Join">
+      <model:documentation></model:documentation>
+    </model:parallelGateway>
+    <model:endEvent id="End2" name="End2">
+      <model:documentation></model:documentation>
+      <model:terminateEventDefinition id="_uue70I0tEeK-GZ2GDNy0MQ"/>
+    </model:endEvent>
+    <model:serviceTask id="Order" name="Order">
+      <model:documentation></model:documentation>
+    </model:serviceTask>
+    <model:serviceTask id="Deliver" name="Deliver">
+      <model:documentation></model:documentation>
+    </model:serviceTask>
+    <model:serviceTask id="Prepare_Command" name="Prepare Command">
+      <model:documentation></model:documentation>
+    </model:serviceTask>
+    <model:serviceTask id="Pay" name="Pay">
+      <model:documentation></model:documentation>
+    </model:serviceTask>
+    <model:sequenceFlow id="_rIMNoNIKEd-mIvEyYHnHJA" sourceRef="Start1" targetRef="Order">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_rasS4NIKEd-mIvEyYHnHJA" sourceRef="Fork" targetRef="Pay">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_rxJrENIKEd-mIvEyYHnHJA" sourceRef="Order" targetRef="Fork">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_t2EJINIKEd-mIvEyYHnHJA" sourceRef="Fork" targetRef="Prepare_Command">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_vKeXUNIKEd-mIvEyYHnHJA" sourceRef="Pay" targetRef="Join">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_wnaPYNIKEd-mIvEyYHnHJA" sourceRef="Prepare_Command" targetRef="Join">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_xJ54cNIKEd-mIvEyYHnHJA" sourceRef="Join" targetRef="Deliver">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_xxh5INIKEd-mIvEyYHnHJA" sourceRef="Deliver" targetRef="End2">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+  </model:process>
+  <di:BPMNDiagram name="Delivery Process">
+    <di:BPMNPlane id="plane_Delivery_Process" bpmnElement="Delivery_Process">
+      <di:BPMNShape id="_2j5YwNIGEd-mIvEyYHnHJA" bpmnElement="Order_lifecycle" isHorizontal="true">
+        <dc:Bounds height="250.0" width="1154.0" x="30.0" y="30.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_2ukXsNIGEd-mIvEyYHnHJA" bpmnElement="Start">
+        <dc:Bounds height="34.0" width="30.0" x="76.0" y="133.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_siAdMI0tEeK-GZ2GDNy0MQ" bpmnElement="End1">
+        <dc:Bounds height="34.0" width="30.0" x="817.0" y="133.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_sib7AI0tEeK-GZ2GDNy0MQ" bpmnElement="Deliver">
+        <dc:Bounds height="50.0" width="100.0" x="627.0" y="120.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_siuO4I0tEeK-GZ2GDNy0MQ" bpmnElement="Prepare_Command">
+        <dc:Bounds height="60.0" width="120.0" x="456.0" y="115.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_sjUEwI0tEeK-GZ2GDNy0MQ" bpmnElement="Order">
+        <dc:Bounds height="50.0" width="100.0" x="152.0" y="120.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_skTjQI0tEeK-GZ2GDNy0MQ" bpmnElement="Pay">
+        <dc:Bounds height="50.0" width="100.0" x="304.0" y="120.0"/>
+      </di:BPMNShape>
+      <di:BPMNEdge id="_29C4kNIGEd-mIvEyYHnHJA" bpmnElement="_28wksNIGEd-mIvEyYHnHJA">
+        <di_1:waypoint x="106.0" y="147.0"/>
+        <di_1:waypoint x="152.0" y="147.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_d4jD4NIHEd-mIvEyYHnHJA" bpmnElement="_d4fZgNIHEd-mIvEyYHnHJA">
+        <di_1:waypoint x="252.0" y="144.0"/>
+        <di_1:waypoint x="304.0" y="144.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_hJiTgNIHEd-mIvEyYHnHJA" bpmnElement="_hJeCENIHEd-mIvEyYHnHJA">
+        <di_1:waypoint x="404.0" y="144.0"/>
+        <di_1:waypoint x="456.0" y="144.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_op0OENIHEd-mIvEyYHnHJA" bpmnElement="_opv8oNIHEd-mIvEyYHnHJA">
+        <di_1:waypoint x="576.0" y="145.0"/>
+        <di_1:waypoint x="627.0" y="145.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_rFPusNIHEd-mIvEyYHnHJA" bpmnElement="_rFLdQNIHEd-mIvEyYHnHJA">
+        <di_1:waypoint x="727.0" y="143.0"/>
+        <di_1:waypoint x="817.0" y="143.0"/>
+      </di:BPMNEdge>
+      <di:BPMNShape id="_m_QpYNIKEd-mIvEyYHnHJA" bpmnElement="Order_lifecycle__Improved_" isHorizontal="true">
+        <dc:Bounds height="250.0" width="1154.0" x="30.0" y="300.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_qpWVgNIKEd-mIvEyYHnHJA" bpmnElement="Start1">
+        <dc:Bounds height="34.0" width="30.0" x="95.0" y="410.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_rw5zcNIKEd-mIvEyYHnHJA" bpmnElement="Fork">
+        <dc:Bounds height="43.0" width="43.0" x="304.0" y="403.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_vKTYMNIKEd-mIvEyYHnHJA" bpmnElement="Join">
+        <dc:Bounds height="43.0" width="43.0" x="575.0" y="403.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_shwlkI0tEeK-GZ2GDNy0MQ" bpmnElement="End2">
+        <dc:Bounds height="34.0" width="30.0" x="855.0" y="418.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_sjBJ0I0tEeK-GZ2GDNy0MQ" bpmnElement="Order">
+        <dc:Bounds height="50.0" width="100.0" x="171.0" y="400.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_sjkjcI0tEeK-GZ2GDNy0MQ" bpmnElement="Deliver">
+        <dc:Bounds height="50.0" width="100.0" x="665.0" y="408.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_sj1CII0tEeK-GZ2GDNy0MQ" bpmnElement="Prepare_Command">
+        <dc:Bounds height="60.0" width="120.0" x="408.0" y="475.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_skE5wI0tEeK-GZ2GDNy0MQ" bpmnElement="Pay">
+        <dc:Bounds height="50.0" width="100.0" x="418.0" y="323.0"/>
+      </di:BPMNShape>
+      <di:BPMNEdge id="_rIQfENIKEd-mIvEyYHnHJA" bpmnElement="_rIMNoNIKEd-mIvEyYHnHJA">
+        <di_1:waypoint x="125.0" y="421.0"/>
+        <di_1:waypoint x="171.0" y="421.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_raxLYNIKEd-mIvEyYHnHJA" bpmnElement="_rasS4NIKEd-mIvEyYHnHJA">
+        <di_1:waypoint x="325.0" y="403.0"/>
+        <di_1:waypoint x="325.0" y="347.0"/>
+        <di_1:waypoint x="418.0" y="347.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_rxN8gNIKEd-mIvEyYHnHJA" bpmnElement="_rxJrENIKEd-mIvEyYHnHJA">
+        <di_1:waypoint x="271.0" y="424.0"/>
+        <di_1:waypoint x="304.0" y="424.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_t2JBoNIKEd-mIvEyYHnHJA" bpmnElement="_t2EJINIKEd-mIvEyYHnHJA">
+        <di_1:waypoint x="325.0" y="446.0"/>
+        <di_1:waypoint x="325.0" y="496.0"/>
+        <di_1:waypoint x="408.0" y="496.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_vKiBsNIKEd-mIvEyYHnHJA" bpmnElement="_vKeXUNIKEd-mIvEyYHnHJA">
+        <di_1:waypoint x="518.0" y="348.0"/>
+        <di_1:waypoint x="596.0" y="348.0"/>
+        <di_1:waypoint x="596.0" y="403.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_wng9ENIKEd-mIvEyYHnHJA" bpmnElement="_wnaPYNIKEd-mIvEyYHnHJA">
+        <di_1:waypoint x="528.0" y="501.0"/>
+        <di_1:waypoint x="593.0" y="501.0"/>
+        <di_1:waypoint x="593.0" y="443.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_xJ-J4NIKEd-mIvEyYHnHJA" bpmnElement="_xJ54cNIKEd-mIvEyYHnHJA">
+        <di_1:waypoint x="616.0" y="426.0"/>
+        <di_1:waypoint x="665.0" y="426.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_xxljgNIKEd-mIvEyYHnHJA" bpmnElement="_xxh5INIKEd-mIvEyYHnHJA">
+        <di_1:waypoint x="765.0" y="429.0"/>
+        <di_1:waypoint x="855.0" y="429.0"/>
+      </di:BPMNEdge>
+    </di:BPMNPlane>
+  </di:BPMNDiagram>
+</model:definitions>

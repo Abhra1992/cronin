@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:definitions xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di_1="http://www.omg.org/spec/DD/20100524/DI" xmlns:model="http://www.omg.org/spec/BPMN/20100524/MODEL" exporter="BonitaSoft" exporterVersion="5.9" expressionLanguage="http://groovy.codehaus.org/" targetNamespace="http://bonitasoft.com/Arrival_of_a_New_Employee_Diagram">
+  <model:collaboration id="Arrival_of_a_New_Employee_Diagram">
+    <model:documentation>This company's process to bring in a new employee</model:documentation>
+    <model:participant id="Initiator">
+      <model:documentation>Person who takes the first action to start the process</model:documentation>
+    </model:participant>
+    <model:participant id="HR_New_Hire_Mgmt_Group">
+      <model:documentation>individuals in HR who handle new hires</model:documentation>
+    </model:participant>
+    <model:participant id="Payroll_New_Hire_Group">
+      <model:documentation>Individuals in payroll who handle new hires</model:documentation>
+    </model:participant>
+    <model:participant id="Hiring_Managers">
+      <model:documentation>Managers with hiring authority</model:documentation>
+    </model:participant>
+    <model:participant id="IT_New_Hire_Support">
+      <model:documentation>inidividuals in IT who support new arrivals</model:documentation>
+    </model:participant>
+    <model:participant id="Telecomm_Support">
+      <model:documentation>team that supports users</model:documentation>
+    </model:participant>
+    <model:participant id="_cNNZAI0tEeK-GZ2GDNy0MQ" name="Arrival of a New Employee" processRef="Arrival_of_a_New_Employee"/>
+  </model:collaboration>
+  <model:process id="Arrival_of_a_New_Employee" name="Arrival of a New Employee">
+    <model:documentation>5 Departments involved - one process</model:documentation>
+    <model:laneSet id="Arrival of a New Employee_laneSet">
+      <model:lane id="Payroll_Accounting" name="Payroll/Accounting">
+        <model:documentation></model:documentation>
+        <model:flowNodeRef>Prepare_payroll_and_benefits_information</model:flowNodeRef>
+      </model:lane>
+      <model:lane id="Human_Resources" name="Human Resources">
+        <model:documentation></model:documentation>
+        <model:flowNodeRef>Start1</model:flowNodeRef>
+        <model:flowNodeRef>Receive_signed_contract</model:flowNodeRef>
+        <model:flowNodeRef>Prepare_new_employee_packet</model:flowNodeRef>
+        <model:flowNodeRef>Notify_hiring_manager</model:flowNodeRef>
+        <model:flowNodeRef>Send_welcome_letter</model:flowNodeRef>
+        <model:flowNodeRef>Notify_payroll</model:flowNodeRef>
+        <model:flowNodeRef>Begin_employee_file</model:flowNodeRef>
+      </model:lane>
+      <model:lane id="Hiring_Manager" name="Hiring Manager">
+        <model:documentation></model:documentation>
+        <model:flowNodeRef>Request_email_and_intranet_accounts</model:flowNodeRef>
+        <model:flowNodeRef>Request_hardware_and_software</model:flowNodeRef>
+        <model:flowNodeRef>Request_phone_and_voicemail</model:flowNodeRef>
+        <model:flowNodeRef>Begin_workspace_setup</model:flowNodeRef>
+        <model:flowNodeRef>Gate2</model:flowNodeRef>
+        <model:flowNodeRef>Finish_workspace_setup</model:flowNodeRef>
+        <model:flowNodeRef>Gate3</model:flowNodeRef>
+        <model:flowNodeRef>Determine_workspace</model:flowNodeRef>
+        <model:flowNodeRef>Welcome_employee</model:flowNodeRef>
+        <model:flowNodeRef>Gate4</model:flowNodeRef>
+        <model:flowNodeRef>Negotiate_for_space</model:flowNodeRef>
+        <model:flowNodeRef>End1</model:flowNodeRef>
+      </model:lane>
+      <model:lane id="IT" name="IT">
+        <model:documentation></model:documentation>
+        <model:flowNodeRef>Requisition_hardware</model:flowNodeRef>
+        <model:flowNodeRef>Requisition_software</model:flowNodeRef>
+        <model:flowNodeRef>Gate1</model:flowNodeRef>
+        <model:flowNodeRef>Set_up_computer</model:flowNodeRef>
+        <model:flowNodeRef>Configure_email_account</model:flowNodeRef>
+      </model:lane>
+      <model:lane id="Telecomm_Services" name="Telecomm Services">
+        <model:documentation></model:documentation>
+        <model:flowNodeRef>Configure_phone_and_voicemail_account</model:flowNodeRef>
+      </model:lane>
+    </model:laneSet>
+    <model:userTask id="Prepare_payroll_and_benefits_information" name="Prepare payroll and benefits information">
+      <model:documentation></model:documentation>
+    </model:userTask>
+    <model:startEvent id="Start1" name="Start1">
+      <model:documentation></model:documentation>
+    </model:startEvent>
+    <model:userTask id="Receive_signed_contract" name="Receive signed contract">
+      <model:documentation>Employee sends back contract, HR starts process&#xD;
+Data received:  &#xD;
+first name last name&#xD;
+postion to be filled&#xD;
+name of hiring manager&#xD;
+salary&#xD;
+special information to be noted</model:documentation>
+    </model:userTask>
+    <model:userTask id="Prepare_new_employee_packet" name="Prepare new employee packet">
+      <model:documentation>assemble general company information&#xD;
+could be automated</model:documentation>
+    </model:userTask>
+    <model:userTask id="Notify_hiring_manager" name="Notify hiring manager">
+      <model:documentation>by tweet</model:documentation>
+    </model:userTask>
+    <model:userTask id="Send_welcome_letter" name="Send welcome letter">
+      <model:documentation>with date to report - first day</model:documentation>
+    </model:userTask>
+    <model:userTask id="Notify_payroll" name="Notify payroll">
+      <model:documentation>Add employee number</model:documentation>
+    </model:userTask>
+    <model:userTask id="Begin_employee_file" name="Begin employee file">
+      <model:documentation>inlcude:  contract, letter, payroll info</model:documentation>
+    </model:userTask>
+    <model:userTask id="Request_email_and_intranet_accounts" name="Request email and intranet accounts">
+      <model:documentation></model:documentation>
+    </model:userTask>
+    <model:userTask id="Request_hardware_and_software" name="Request hardware and software">
+      <model:documentation></model:documentation>
+    </model:userTask>
+    <model:userTask id="Request_phone_and_voicemail" name="Request phone and voicemail">
+      <model:documentation></model:documentation>
+    </model:userTask>
+    <model:userTask id="Begin_workspace_setup" name="Begin workspace setup">
+      <model:documentation>desk, chair, supplies&#xD;
+</model:documentation>
+    </model:userTask>
+    <model:exclusiveGateway id="Gate2" name="Gate2">
+      <model:documentation></model:documentation>
+    </model:exclusiveGateway>
+    <model:userTask id="Finish_workspace_setup" name="Finish workspace setup">
+      <model:documentation>computer, email, phone</model:documentation>
+    </model:userTask>
+    <model:parallelGateway id="Gate3" name="Gate3">
+      <model:documentation></model:documentation>
+    </model:parallelGateway>
+    <model:userTask id="Determine_workspace" name="Determine workspace">
+      <model:documentation></model:documentation>
+    </model:userTask>
+    <model:userTask id="Welcome_employee" name="Welcome employee">
+      <model:documentation></model:documentation>
+    </model:userTask>
+    <model:parallelGateway id="Gate4" name="Gate4">
+      <model:documentation></model:documentation>
+    </model:parallelGateway>
+    <model:userTask id="Negotiate_for_space" name="Negotiate for space">
+      <model:documentation></model:documentation>
+    </model:userTask>
+    <model:endEvent id="End1" name="End1">
+      <model:documentation></model:documentation>
+      <model:terminateEventDefinition id="_cOGJ0I0tEeK-GZ2GDNy0MQ"/>
+    </model:endEvent>
+    <model:userTask id="Requisition_hardware" name="Requisition hardware">
+      <model:documentation>Subprocess: check inventory; order if not available; receive and confirm receipt</model:documentation>
+    </model:userTask>
+    <model:userTask id="Requisition_software" name="Requisition software">
+      <model:documentation>Subprocess: check inventory; order if not available; receive and confirm receipt</model:documentation>
+    </model:userTask>
+    <model:parallelGateway id="Gate1" name="Gate1">
+      <model:documentation></model:documentation>
+    </model:parallelGateway>
+    <model:userTask id="Set_up_computer" name="Set up computer">
+      <model:documentation></model:documentation>
+    </model:userTask>
+    <model:userTask id="Configure_email_account" name="Configure email account">
+      <model:documentation></model:documentation>
+    </model:userTask>
+    <model:userTask id="Configure_phone_and_voicemail_account" name="Configure phone and voicemail account">
+      <model:documentation></model:documentation>
+    </model:userTask>
+    <model:sequenceFlow id="_9APioNX2Ed6HO6VIfJqwnQ" sourceRef="Start1" targetRef="Receive_signed_contract">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_qzcHsNgqEd6aU4zVcq3kpw" sourceRef="Receive_signed_contract" targetRef="Notify_payroll">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_rVqD8NgqEd6aU4zVcq3kpw" sourceRef="Notify_payroll" targetRef="Prepare_payroll_and_benefits_information">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_r9h8QNgqEd6aU4zVcq3kpw" sourceRef="Receive_signed_contract" targetRef="Send_welcome_letter">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_sbu7MNgqEd6aU4zVcq3kpw" sourceRef="Receive_signed_contract" targetRef="Notify_hiring_manager">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_uDkbsNgqEd6aU4zVcq3kpw" sourceRef="Receive_signed_contract" targetRef="Prepare_new_employee_packet">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_qvke4NgrEd6aU4zVcq3kpw" sourceRef="Notify_hiring_manager" targetRef="Request_email_and_intranet_accounts">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_rQmIUNgrEd6aU4zVcq3kpw" sourceRef="Notify_hiring_manager" targetRef="Request_hardware_and_software">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_s7EJQNgvEd6aU4zVcq3kpw" sourceRef="Send_welcome_letter" targetRef="Begin_employee_file">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_DiqBMNgwEd6aU4zVcq3kpw" sourceRef="Requisition_hardware" targetRef="Gate1">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_EElCgNgwEd6aU4zVcq3kpw" sourceRef="Requisition_software" targetRef="Gate1">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_SNHqgNgwEd6aU4zVcq3kpw" sourceRef="Request_phone_and_voicemail" targetRef="Configure_phone_and_voicemail_account">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_ZB6_INgwEd6aU4zVcq3kpw" sourceRef="Request_hardware_and_software" targetRef="Requisition_hardware">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_aCVTQNgwEd6aU4zVcq3kpw" sourceRef="Request_hardware_and_software" targetRef="Requisition_software">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="if_available" name="if available" sourceRef="Determine_workspace" targetRef="Gate2">
+      <model:documentation></model:documentation>
+      <model:conditionExpression>Is_workspace_available</model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_WqXnANgyEd6xQZ_K6WcEqQ" sourceRef="Negotiate_for_space" targetRef="Gate2">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_X_wsoNgyEd6xQZ_K6WcEqQ" sourceRef="Gate2" targetRef="Begin_workspace_setup">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_Nd1wkNgzEd6xQZ_K6WcEqQ" sourceRef="Gate1" targetRef="Set_up_computer">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_P43BgNgzEd6xQZ_K6WcEqQ" sourceRef="Begin_workspace_setup" targetRef="Gate3">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_8omcUNgzEd6xQZ_K6WcEqQ" sourceRef="Gate3" targetRef="Finish_workspace_setup">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_IOaMYNg1Ed6xQZ_K6WcEqQ" sourceRef="Request_email_and_intranet_accounts" targetRef="Configure_email_account">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_Lg7GANg1Ed6xQZ_K6WcEqQ" sourceRef="Set_up_computer" targetRef="Gate3">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_PGVGcNg1Ed6xQZ_K6WcEqQ" sourceRef="Configure_email_account" targetRef="Gate3">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_pzSRQNg1Ed6xQZ_K6WcEqQ" sourceRef="Finish_workspace_setup" targetRef="Gate4">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_ueBiENg1Ed6xQZ_K6WcEqQ" sourceRef="Configure_phone_and_voicemail_account" targetRef="Gate3">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_KQAbQNg2Ed6xQZ_K6WcEqQ" sourceRef="Prepare_payroll_and_benefits_information" targetRef="Gate4">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_RFGq0Ng2Ed6xQZ_K6WcEqQ" sourceRef="Gate4" targetRef="Welcome_employee">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_T4h0sNg2Ed6xQZ_K6WcEqQ" sourceRef="Begin_employee_file" targetRef="Gate4">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="if_not_available" name="if not available" sourceRef="Determine_workspace" targetRef="Negotiate_for_space">
+      <model:documentation></model:documentation>
+      <model:conditionExpression>!Is_workspace_available</model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_t_6QMdjZEd6HB9lV7a7JGg" sourceRef="Prepare_new_employee_packet" targetRef="Gate4">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_O0uaMAUFEd-tx--G7-uucA" sourceRef="Notify_hiring_manager" targetRef="Request_phone_and_voicemail">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_KepzAAUfEd-TR87Fh136hA" sourceRef="Notify_hiring_manager" targetRef="Determine_workspace">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_dWCQoNUQEd-tOOAyNeikyA" sourceRef="Welcome_employee" targetRef="End1">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:dataObject id="Is_workspace_available" name="Is workspace available" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="email" name="email" isCollection="false">
+      <model:documentation>company email </model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Phone_extension" name="Phone extension" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Name" name="Name" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Position" name="Position" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Hiring_manager" name="Hiring manager" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Start_date" name="Start date" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Employee_Contract" name="Employee Contract" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="email" name="email" isCollection="false">
+      <model:documentation>personal email</model:documentation>
+    </model:dataObject>
+    <model:dataObject id="salary" name="salary" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Employee_Number" name="Employee Number" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Location" name="Location" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Intranet_access_level" name="Intranet access level" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Intranet_login" name="Intranet login" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Intranet_password" name="Intranet password" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Hardware" name="Hardware" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="Software" name="Software" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="SoftwareList" name="SoftwareList" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="reviewDate" name="reviewDate" isCollection="false">
+      <model:documentation>start date plus 3 months</model:documentation>
+    </model:dataObject>
+    <model:dataObject id="data_of_first_check" name="data of first check" isCollection="false">
+      <model:documentation>start date plus 2 weeks</model:documentation>
+    </model:dataObject>
+  </model:process>
+  <di:BPMNDiagram name="Arrival of a New Employee Diagram">
+    <di:BPMNPlane id="plane_Arrival_of_a_New_Employee_Diagram" bpmnElement="Arrival_of_a_New_Employee_Diagram">
+      <di:BPMNShape id="_8_y2sNX2Ed6HO6VIfJqwnQ" bpmnElement="Arrival_of_a_New_Employee" isHorizontal="true">
+        <dc:Bounds height="1236.0" width="1961.0" x="30.0" y="30.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_s00aUNgOEd6vPvUyXfjVGQ" bpmnElement="Payroll_Accounting" isHorizontal="true">
+        <dc:Bounds height="136.0" width="1979.0" x="52.0" y="30.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_XwEZ4dgpEd6aU4zVcq3kpw" bpmnElement="Prepare_payroll_and_benefits_information">
+        <dc:Bounds height="70.0" width="140.0" x="1541.0" y="63.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_XYDC0NgmEd6aU4zVcq3kpw" bpmnElement="Human_Resources" isHorizontal="true">
+        <dc:Bounds height="345.0" width="1979.0" x="52.0" y="166.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_8_8nsdX2Ed6HO6VIfJqwnQ" bpmnElement="Start1">
+        <dc:Bounds height="34.0" width="30.0" x="107.0" y="286.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_8_y2uNX2Ed6HO6VIfJqwnQ" bpmnElement="Receive_signed_contract">
+        <dc:Bounds height="60.0" width="120.0" x="183.0" y="271.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_VZ9eIdgpEd6aU4zVcq3kpw" bpmnElement="Prepare_new_employee_packet">
+        <dc:Bounds height="60.0" width="120.0" x="1684.0" y="271.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_7HgokdgpEd6aU4zVcq3kpw" bpmnElement="Notify_hiring_manager">
+        <dc:Bounds height="60.0" width="120.0" x="183.0" y="428.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_7yp3UdgpEd6aU4zVcq3kpw" bpmnElement="Send_welcome_letter">
+        <dc:Bounds height="60.0" width="120.0" x="427.0" y="352.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_8MPcAdgpEd6aU4zVcq3kpw" bpmnElement="Notify_payroll">
+        <dc:Bounds height="50.0" width="100.0" x="437.0" y="181.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_9POaodg3Ed6xQZ_K6WcEqQ" bpmnElement="Begin_employee_file">
+        <dc:Bounds height="60.0" width="120.0" x="696.0" y="352.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_XYDC19gmEd6aU4zVcq3kpw" bpmnElement="Hiring_Manager" isHorizontal="true">
+        <dc:Bounds height="350.0" width="1979.0" x="52.0" y="511.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_4VudcNgpEd6aU4zVcq3kpw" bpmnElement="Request_email_and_intranet_accounts">
+        <dc:Bounds height="70.0" width="140.0" x="526.0" y="740.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_6EHR4dgpEd6aU4zVcq3kpw" bpmnElement="Request_hardware_and_software">
+        <dc:Bounds height="60.0" width="120.0" x="696.0" y="675.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_wRpnYdgrEd6aU4zVcq3kpw" bpmnElement="Request_phone_and_voicemail">
+        <dc:Bounds height="60.0" width="120.0" x="240.0" y="750.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_4JamIdgxEd6xQZ_K6WcEqQ" bpmnElement="Begin_workspace_setup">
+        <dc:Bounds height="60.0" width="120.0" x="1075.0" y="521.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Xaaj4dgyEd6xQZ_K6WcEqQ" bpmnElement="Gate2">
+        <dc:Bounds height="43.0" width="43.0" x="958.0" y="529.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_GOtQYdgzEd6xQZ_K6WcEqQ" bpmnElement="Finish_workspace_setup">
+        <dc:Bounds height="60.0" width="120.0" x="1551.0" y="667.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_POw7odgzEd6xQZ_K6WcEqQ" bpmnElement="Gate3">
+        <dc:Bounds height="43.0" width="43.0" x="1380.0" y="675.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_R-Vq0dg0Ed6xQZ_K6WcEqQ" bpmnElement="Determine_workspace">
+        <dc:Bounds height="60.0" width="120.0" x="468.0" y="561.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_fS-7Qdg1Ed6xQZ_K6WcEqQ" bpmnElement="Welcome_employee">
+        <dc:Bounds height="60.0" width="120.0" x="1741.0" y="597.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_n6x3gdg1Ed6xQZ_K6WcEqQ" bpmnElement="Gate4">
+        <dc:Bounds height="43.0" width="43.0" x="1589.0" y="545.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_lv5M8dg4Ed6xQZ_K6WcEqQ" bpmnElement="Negotiate_for_space">
+        <dc:Bounds height="60.0" width="120.0" x="920.0" y="608.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_nMsOcCO5EeCwPY9ch5xSlw" bpmnElement="End1">
+        <dc:Bounds height="30.0" width="30.0" x="1935.0" y="612.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_ahC0EdgmEd6aU4zVcq3kpw" bpmnElement="IT" isHorizontal="true">
+        <dc:Bounds height="305.0" width="1979.0" x="52.0" y="861.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_bVcWYdgvEd6aU4zVcq3kpw" bpmnElement="Requisition_hardware">
+        <dc:Bounds height="60.0" width="120.0" x="696.0" y="943.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_d_ycwNgvEd6aU4zVcq3kpw" bpmnElement="Requisition_software">
+        <dc:Bounds height="60.0" width="120.0" x="898.0" y="884.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_Ck6mkdgwEd6aU4zVcq3kpw" bpmnElement="Gate1">
+        <dc:Bounds height="43.0" width="43.0" x="1152.0" y="892.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_F-kqAdgwEd6aU4zVcq3kpw" bpmnElement="Set_up_computer">
+        <dc:Bounds height="60.0" width="120.0" x="1342.0" y="884.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_1Nwwgdg1Ed6xQZ_K6WcEqQ" bpmnElement="Configure_email_account">
+        <dc:Bounds height="60.0" width="120.0" x="536.0" y="1017.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_a0FE0NgmEd6aU4zVcq3kpw" bpmnElement="Telecomm_Services" isHorizontal="true">
+        <dc:Bounds height="100.0" width="1979.0" x="52.0" y="1166.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_HfYmYdg5Ed6xQZ_K6WcEqQ" bpmnElement="Configure_phone_and_voicemail_account">
+        <dc:Bounds height="70.0" width="140.0" x="173.0" y="1188.0"/>
+      </di:BPMNShape>
+      <di:BPMNEdge id="_9APiodX2Ed6HO6VIfJqwnQ" bpmnElement="_9APioNX2Ed6HO6VIfJqwnQ">
+        <di_1:waypoint x="137.0" y="302.0"/>
+        <di_1:waypoint x="183.0" y="302.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_qzl4sNgqEd6aU4zVcq3kpw" bpmnElement="_qzcHsNgqEd6aU4zVcq3kpw">
+        <di_1:waypoint x="303.0" y="286.0"/>
+        <di_1:waypoint x="370.0" y="286.0"/>
+        <di_1:waypoint x="370.0" y="203.0"/>
+        <di_1:waypoint x="437.0" y="203.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_rVqD8dgqEd6aU4zVcq3kpw" bpmnElement="_rVqD8NgqEd6aU4zVcq3kpw">
+        <di_1:waypoint x="537.0" y="200.0"/>
+        <di_1:waypoint x="1039.0" y="200.0"/>
+        <di_1:waypoint x="1039.0" y="88.0"/>
+        <di_1:waypoint x="1541.0" y="88.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_r9h8QdgqEd6aU4zVcq3kpw" bpmnElement="_r9h8QNgqEd6aU4zVcq3kpw">
+        <di_1:waypoint x="303.0" y="320.0"/>
+        <di_1:waypoint x="365.0" y="320.0"/>
+        <di_1:waypoint x="365.0" y="361.0"/>
+        <di_1:waypoint x="427.0" y="361.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_sbu7MdgqEd6aU4zVcq3kpw" bpmnElement="_sbu7MNgqEd6aU4zVcq3kpw">
+        <di_1:waypoint x="227.0" y="331.0"/>
+        <di_1:waypoint x="227.0" y="428.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_uDuMsNgqEd6aU4zVcq3kpw" bpmnElement="_uDkbsNgqEd6aU4zVcq3kpw">
+        <di_1:waypoint x="303.0" y="301.0"/>
+        <di_1:waypoint x="1684.0" y="301.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_qvke4dgrEd6aU4zVcq3kpw" bpmnElement="_qvke4NgrEd6aU4zVcq3kpw">
+        <di_1:waypoint x="303.0" y="467.0"/>
+        <di_1:waypoint x="414.0" y="467.0"/>
+        <di_1:waypoint x="414.0" y="751.0"/>
+        <di_1:waypoint x="526.0" y="751.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_rQmIUdgrEd6aU4zVcq3kpw" bpmnElement="_rQmIUNgrEd6aU4zVcq3kpw">
+        <di_1:waypoint x="303.0" y="456.0"/>
+        <di_1:waypoint x="499.0" y="456.0"/>
+        <di_1:waypoint x="499.0" y="710.0"/>
+        <di_1:waypoint x="696.0" y="710.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_s7EJQdgvEd6aU4zVcq3kpw" bpmnElement="_s7EJQNgvEd6aU4zVcq3kpw">
+        <di_1:waypoint x="547.0" y="362.0"/>
+        <di_1:waypoint x="696.0" y="362.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_DiqBMdgwEd6aU4zVcq3kpw" bpmnElement="_DiqBMNgwEd6aU4zVcq3kpw">
+        <di_1:waypoint x="816.0" y="964.0"/>
+        <di_1:waypoint x="989.0" y="964.0"/>
+        <di_1:waypoint x="989.0" y="916.0"/>
+        <di_1:waypoint x="1155.0" y="916.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_EElCgdgwEd6aU4zVcq3kpw" bpmnElement="_EElCgNgwEd6aU4zVcq3kpw">
+        <di_1:waypoint x="1018.0" y="912.0"/>
+        <di_1:waypoint x="1151.0" y="912.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_SNHqgdgwEd6aU4zVcq3kpw" bpmnElement="_SNHqgNgwEd6aU4zVcq3kpw">
+        <di_1:waypoint x="352.0" y="810.0"/>
+        <di_1:waypoint x="352.0" y="999.0"/>
+        <di_1:waypoint x="240.0" y="999.0"/>
+        <di_1:waypoint x="240.0" y="1188.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_ZCEJENgwEd6aU4zVcq3kpw" bpmnElement="_ZB6_INgwEd6aU4zVcq3kpw">
+        <di_1:waypoint x="750.0" y="735.0"/>
+        <di_1:waypoint x="750.0" y="839.0"/>
+        <di_1:waypoint x="711.0" y="839.0"/>
+        <di_1:waypoint x="711.0" y="943.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_aCVTQdgwEd6aU4zVcq3kpw" bpmnElement="_aCVTQNgwEd6aU4zVcq3kpw">
+        <di_1:waypoint x="740.0" y="735.0"/>
+        <di_1:waypoint x="740.0" y="907.0"/>
+        <di_1:waypoint x="898.0" y="907.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_R5rfMdgyEd6xQZ_K6WcEqQ" bpmnElement="if_available">
+        <di_1:waypoint x="588.0" y="585.0"/>
+        <di_1:waypoint x="773.0" y="585.0"/>
+        <di_1:waypoint x="773.0" y="551.0"/>
+        <di_1:waypoint x="959.0" y="551.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_WqXnAdgyEd6xQZ_K6WcEqQ" bpmnElement="_WqXnANgyEd6xQZ_K6WcEqQ">
+        <di_1:waypoint x="979.0" y="608.0"/>
+        <di_1:waypoint x="979.0" y="572.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_X_wsodgyEd6xQZ_K6WcEqQ" bpmnElement="_X_wsoNgyEd6xQZ_K6WcEqQ">
+        <di_1:waypoint x="1000.0" y="549.0"/>
+        <di_1:waypoint x="1037.0" y="549.0"/>
+        <di_1:waypoint x="1037.0" y="546.0"/>
+        <di_1:waypoint x="1075.0" y="546.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Nd1wkdgzEd6xQZ_K6WcEqQ" bpmnElement="_Nd1wkNgzEd6xQZ_K6WcEqQ">
+        <di_1:waypoint x="1195.0" y="912.0"/>
+        <di_1:waypoint x="1342.0" y="912.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_P43BgdgzEd6xQZ_K6WcEqQ" bpmnElement="_P43BgNgzEd6xQZ_K6WcEqQ">
+        <di_1:waypoint x="1186.0" y="581.0"/>
+        <di_1:waypoint x="1186.0" y="693.0"/>
+        <di_1:waypoint x="1382.0" y="693.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_8omcUdgzEd6xQZ_K6WcEqQ" bpmnElement="_8omcUNgzEd6xQZ_K6WcEqQ">
+        <di_1:waypoint x="1420.0" y="698.0"/>
+        <di_1:waypoint x="1551.0" y="698.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_IOaMYdg1Ed6xQZ_K6WcEqQ" bpmnElement="_IOaMYNg1Ed6xQZ_K6WcEqQ">
+        <di_1:waypoint x="592.0" y="810.0"/>
+        <di_1:waypoint x="592.0" y="913.0"/>
+        <di_1:waypoint x="568.0" y="913.0"/>
+        <di_1:waypoint x="568.0" y="1017.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Lg7GAdg1Ed6xQZ_K6WcEqQ" bpmnElement="_Lg7GANg1Ed6xQZ_K6WcEqQ">
+        <di_1:waypoint x="1402.0" y="884.0"/>
+        <di_1:waypoint x="1402.0" y="717.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_PGVGcdg1Ed6xQZ_K6WcEqQ" bpmnElement="_PGVGcNg1Ed6xQZ_K6WcEqQ">
+        <di_1:waypoint x="656.0" y="1020.0"/>
+        <di_1:waypoint x="1019.0" y="1020.0"/>
+        <di_1:waypoint x="1019.0" y="699.0"/>
+        <di_1:waypoint x="1383.0" y="699.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_pzcCQNg1Ed6xQZ_K6WcEqQ" bpmnElement="_pzSRQNg1Ed6xQZ_K6WcEqQ">
+        <di_1:waypoint x="1608.0" y="667.0"/>
+        <di_1:waypoint x="1608.0" y="622.0"/>
+        <di_1:waypoint x="1600.0" y="622.0"/>
+        <di_1:waypoint x="1600.0" y="577.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_ueBiEdg1Ed6xQZ_K6WcEqQ" bpmnElement="_ueBiENg1Ed6xQZ_K6WcEqQ">
+        <di_1:waypoint x="313.0" y="1223.0"/>
+        <di_1:waypoint x="847.0" y="1223.0"/>
+        <di_1:waypoint x="847.0" y="698.0"/>
+        <di_1:waypoint x="1382.0" y="698.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_KQAbQdg2Ed6xQZ_K6WcEqQ" bpmnElement="_KQAbQNg2Ed6xQZ_K6WcEqQ">
+        <di_1:waypoint x="1612.0" y="133.0"/>
+        <di_1:waypoint x="1612.0" y="546.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_RFQb0Ng2Ed6xQZ_K6WcEqQ" bpmnElement="_RFGq0Ng2Ed6xQZ_K6WcEqQ">
+        <di_1:waypoint x="1629.0" y="568.0"/>
+        <di_1:waypoint x="1685.0" y="568.0"/>
+        <di_1:waypoint x="1685.0" y="606.0"/>
+        <di_1:waypoint x="1741.0" y="606.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_T4h0sdg2Ed6xQZ_K6WcEqQ" bpmnElement="_T4h0sNg2Ed6xQZ_K6WcEqQ">
+        <di_1:waypoint x="816.0" y="355.0"/>
+        <di_1:waypoint x="1603.0" y="355.0"/>
+        <di_1:waypoint x="1603.0" y="552.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_KIikgdg6Ed6xQZ_K6WcEqQ" bpmnElement="if_not_available">
+        <di_1:waypoint x="588.0" y="607.0"/>
+        <di_1:waypoint x="754.0" y="607.0"/>
+        <di_1:waypoint x="754.0" y="644.0"/>
+        <di_1:waypoint x="920.0" y="644.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_uAEBMNjZEd6HB9lV7a7JGg" bpmnElement="_t_6QMdjZEd6HB9lV7a7JGg">
+        <di_1:waypoint x="1727.0" y="331.0"/>
+        <di_1:waypoint x="1727.0" y="439.0"/>
+        <di_1:waypoint x="1612.0" y="439.0"/>
+        <di_1:waypoint x="1612.0" y="547.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_O0wPYAUFEd-tx--G7-uucA" bpmnElement="_O0uaMAUFEd-tx--G7-uucA">
+        <di_1:waypoint x="221.0" y="488.0"/>
+        <di_1:waypoint x="221.0" y="619.0"/>
+        <di_1:waypoint x="324.0" y="619.0"/>
+        <di_1:waypoint x="324.0" y="750.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_KesPQAUfEd-TR87Fh136hA" bpmnElement="_KepzAAUfEd-TR87Fh136hA">
+        <di_1:waypoint x="242.0" y="488.0"/>
+        <di_1:waypoint x="242.0" y="524.0"/>
+        <di_1:waypoint x="476.0" y="524.0"/>
+        <di_1:waypoint x="476.0" y="561.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_dWN20NUQEd-tOOAyNeikyA" bpmnElement="_dWCQoNUQEd-tOOAyNeikyA">
+        <di_1:waypoint x="1861.0" y="625.0"/>
+        <di_1:waypoint x="1935.0" y="625.0"/>
+      </di:BPMNEdge>
+    </di:BPMNPlane>
+  </di:BPMNDiagram>
+</model:definitions>
