@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:definitions xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di_1="http://www.omg.org/spec/DD/20100524/DI" xmlns:model="http://www.omg.org/spec/BPMN/20100524/MODEL" exporter="BonitaSoft" exporterVersion="5.9" expressionLanguage="http://groovy.codehaus.org/" targetNamespace="http://bonitasoft.com/Web_Purchase_Diagram">
+  <model:collaboration id="Web_Purchase_Diagram">
+    <model:documentation>Simple item purchase from Web site &#x2013; tutorial example</model:documentation>
+    <model:participant id="Initiator">
+      <model:documentation>Person who takes the first action to start the process</model:documentation>
+    </model:participant>
+    <model:participant id="Sales_Employees">
+      <model:documentation>Employees authorized to handle web sales</model:documentation>
+    </model:participant>
+    <model:participant id="_zn3v0I0xEeK-GZ2GDNy0MQ" name="Web Purchase" processRef="Web_Purchase"/>
+  </model:collaboration>
+  <model:process id="Web_Purchase" name="Web Purchase">
+    <model:documentation>Simple item purchase from Web site &#x2013; tutorial example</model:documentation>
+    <model:userTask id="Sales_Review" name="Sales Review">
+      <model:documentation>Sales employee receives order for processing</model:documentation>
+    </model:userTask>
+    <model:startEvent id="Start1" name="Start1">
+      <model:documentation></model:documentation>
+    </model:startEvent>
+    <model:userTask id="Pay" name="Pay">
+      <model:documentation>Customer completes credit card payment form</model:documentation>
+    </model:userTask>
+    <model:userTask id="More_Info" name="More Info">
+      <model:documentation>Sales employee enters additional information</model:documentation>
+    </model:userTask>
+    <model:exclusiveGateway id="Gate1" name="Gate1">
+      <model:documentation></model:documentation>
+    </model:exclusiveGateway>
+    <model:serviceTask id="Reject" name="Reject">
+      <model:documentation>Request is rejected</model:documentation>
+    </model:serviceTask>
+    <model:serviceTask id="Express_Delivery" name="Express Delivery">
+      <model:documentation>Send item via 3-day delivery</model:documentation>
+    </model:serviceTask>
+    <model:serviceTask id="Archive" name="Archive">
+      <model:documentation>System archives record of transaction</model:documentation>
+    </model:serviceTask>
+    <model:endEvent id="End1" name="End1">
+      <model:documentation></model:documentation>
+      <model:terminateEventDefinition id="_zn4W4I0xEeK-GZ2GDNy0MQ"/>
+    </model:endEvent>
+    <model:sequenceFlow id="if_approved" name="if approved" sourceRef="Sales_Review" targetRef="Pay">
+      <model:documentation></model:documentation>
+      <model:conditionExpression>decision == &quot;Approve&quot;</model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="if_not_approved" name="if not approved" sourceRef="Sales_Review" targetRef="Reject">
+      <model:documentation></model:documentation>
+      <model:conditionExpression>decision == &quot;Reject&quot;</model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="add_a_comment" name="add a comment" sourceRef="Sales_Review" targetRef="More_Info">
+      <model:documentation></model:documentation>
+      <model:conditionExpression>decision == &quot;More Info&quot;</model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="if_yes" name="if yes" sourceRef="Pay" targetRef="Express_Delivery">
+      <model:documentation></model:documentation>
+      <model:conditionExpression>chooseExpressDelivery</model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_16k2IBirEeCG5YN1K76MzQ" sourceRef="Express_Delivery" targetRef="Archive">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="if_no" name="if no" sourceRef="Pay" targetRef="Archive">
+      <model:documentation></model:documentation>
+      <model:conditionExpression>!chooseExpressDelivery</model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_UEI1RBitEeCG5YN1K76MzQ" sourceRef="Archive" targetRef="End1">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_2xyqoBiuEeCG5YN1K76MzQ" sourceRef="Start1" targetRef="Gate1">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_aiXyEBivEeCG5YN1K76MzQ" sourceRef="Gate1" targetRef="Sales_Review">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_cKqlkBivEeCG5YN1K76MzQ" sourceRef="More_Info" targetRef="Gate1">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_mKZmUBjJEeCG5YN1K76MzQ" sourceRef="Reject" targetRef="Archive">
+      <model:documentation></model:documentation>
+    </model:sequenceFlow>
+    <model:dataObject id="decision" name="decision" isCollection="false">
+      <model:documentation>Multiple options require a decision</model:documentation>
+    </model:dataObject>
+    <model:dataObject id="chooseExpressDelivery" name="chooseExpressDelivery" isCollection="false">
+      <model:documentation>If yes - send express; if no - send regular post</model:documentation>
+    </model:dataObject>
+    <model:dataObject id="creditCardNumber" name="creditCardNumber" isCollection="false">
+      <model:documentation>Customer's Credit Card</model:documentation>
+    </model:dataObject>
+    <model:dataObject id="expirationDate" name="expirationDate" isCollection="false">
+      <model:documentation>Card valid until</model:documentation>
+    </model:dataObject>
+    <model:dataObject id="comment" name="comment" isCollection="false">
+      <model:documentation>Additional information supplied by sales employee</model:documentation>
+    </model:dataObject>
+    <model:dataObject id="customerEmail" name="customerEmail" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="customerName" name="customerName" isCollection="false">
+      <model:documentation>Customer&#x2019;s full name</model:documentation>
+    </model:dataObject>
+    <model:dataObject id="customerPhone" name="customerPhone" isCollection="false">
+      <model:documentation></model:documentation>
+    </model:dataObject>
+    <model:dataObject id="products" name="products" isCollection="false">
+      <model:documentation>Available products</model:documentation>
+    </model:dataObject>
+  </model:process>
+  <di:BPMNDiagram name="Web Purchase Diagram">
+    <di:BPMNPlane id="plane_Web_Purchase_Diagram" bpmnElement="Web_Purchase_Diagram">
+      <di:BPMNShape id="_-5C_UBfiEeCwB4T6GIXFOg" bpmnElement="Web_Purchase" isHorizontal="true">
+        <dc:Bounds height="250.0" width="1152.0" x="30.0" y="30.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_-5MwURfiEeCwB4T6GIXFOg" bpmnElement="Sales_Review">
+        <dc:Bounds height="50.0" width="100.0" x="254.0" y="75.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_-5V6QRfiEeCwB4T6GIXFOg" bpmnElement="Start1">
+        <dc:Bounds height="34.0" width="30.0" x="55.0" y="85.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_0cmZgBgtEeCwB4T6GIXFOg" bpmnElement="Pay">
+        <dc:Bounds height="50.0" width="100.0" x="475.0" y="75.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_aY2t4BioEeCG5YN1K76MzQ" bpmnElement="More_Info">
+        <dc:Bounds height="50.0" width="100.0" x="254.0" y="193.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_hHP0UBivEeCG5YN1K76MzQ" bpmnElement="Gate1">
+        <dc:Bounds height="43.0" width="43.0" x="152.0" y="79.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_sbqWYGakEeCWgc_swxTqYg" bpmnElement="Reject">
+        <dc:Bounds height="50.0" width="100.0" x="475.0" y="193.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_sgYeUGakEeCWgc_swxTqYg" bpmnElement="Express_Delivery">
+        <dc:Bounds height="50.0" width="100.0" x="665.0" y="76.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_sgzVEGakEeCWgc_swxTqYg" bpmnElement="Archive">
+        <dc:Bounds height="50.0" width="100.0" x="665.0" y="193.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_zGNi0GakEeCWgc_swxTqYg" bpmnElement="End1">
+        <dc:Bounds height="34.0" width="30.0" x="836.0" y="200.0"/>
+      </di:BPMNShape>
+      <di:BPMNEdge id="_uHNkwBgtEeCwB4T6GIXFOg" bpmnElement="if_approved">
+        <di_1:waypoint x="354.0" y="99.0"/>
+        <di_1:waypoint x="475.0" y="99.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_WVhQwBinEeCG5YN1K76MzQ" bpmnElement="if_not_approved">
+        <di_1:waypoint x="354.0" y="118.0"/>
+        <di_1:waypoint x="414.0" y="118.0"/>
+        <di_1:waypoint x="414.0" y="216.0"/>
+        <di_1:waypoint x="475.0" y="216.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_-GIfIBinEeCG5YN1K76MzQ" bpmnElement="add_a_comment">
+        <di_1:waypoint x="296.0" y="125.0"/>
+        <di_1:waypoint x="296.0" y="193.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Z_8-UBirEeCG5YN1K76MzQ" bpmnElement="if_yes">
+        <di_1:waypoint x="575.0" y="100.0"/>
+        <di_1:waypoint x="665.0" y="100.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_16uAEBirEeCG5YN1K76MzQ" bpmnElement="_16k2IBirEeCG5YN1K76MzQ">
+        <di_1:waypoint x="714.0" y="126.0"/>
+        <di_1:waypoint x="714.0" y="193.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_hVgaIBisEeCG5YN1K76MzQ" bpmnElement="if_no">
+        <di_1:waypoint x="575.0" y="114.0"/>
+        <di_1:waypoint x="627.0" y="114.0"/>
+        <di_1:waypoint x="627.0" y="214.0"/>
+        <di_1:waypoint x="665.0" y="214.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_UEI1RRitEeCG5YN1K76MzQ" bpmnElement="_UEI1RBitEeCG5YN1K76MzQ">
+        <di_1:waypoint x="765.0" y="216.0"/>
+        <di_1:waypoint x="836.0" y="216.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_2xyqoRiuEeCG5YN1K76MzQ" bpmnElement="_2xyqoBiuEeCG5YN1K76MzQ">
+        <di_1:waypoint x="85.0" y="100.0"/>
+        <di_1:waypoint x="152.0" y="100.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_aiXyERivEeCG5YN1K76MzQ" bpmnElement="_aiXyEBivEeCG5YN1K76MzQ">
+        <di_1:waypoint x="193.0" y="99.0"/>
+        <di_1:waypoint x="254.0" y="99.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_cKzvgBivEeCG5YN1K76MzQ" bpmnElement="_cKqlkBivEeCG5YN1K76MzQ">
+        <di_1:waypoint x="254.0" y="218.0"/>
+        <di_1:waypoint x="173.0" y="218.0"/>
+        <di_1:waypoint x="173.0" y="122.0"/>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_mKcpoBjJEeCG5YN1K76MzQ" bpmnElement="_mKZmUBjJEeCG5YN1K76MzQ">
+        <di_1:waypoint x="575.0" y="228.0"/>
+        <di_1:waypoint x="665.0" y="228.0"/>
+      </di:BPMNEdge>
+    </di:BPMNPlane>
+  </di:BPMNDiagram>
+</model:definitions>

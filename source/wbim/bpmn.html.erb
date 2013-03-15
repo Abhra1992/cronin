@@ -27,6 +27,10 @@ bpmn:
     caption: Request for Advance Payment
     image: Request_For_Advance_Payment_1.2.png
     xml: RequestForAdvancePayment.bpmn
+  web_purchase:
+    caption: Web Purchase
+    image: Web_Purchase_Diagram_1.5.png
+    xml: WebPurchase.bpmn
 ---
 <div class="assignment view">
   <section class="assignment-description">
@@ -39,12 +43,13 @@ bpmn:
       <% data.page.bpmn.each do |model, m| %>
       <figure>
         <%= image_tag "wbim/#{m['image']}" %>
-        <figcaption><%= link_to m['caption'], m['xml'] %></figcaption>
+        <figcaption><%= link_to m['caption'], 'bpmn/' + m['xml'] %></figcaption>
       </figure>
       <% end %>
     </article>    
     <p>To save the XML files for the BPMN, right click on the caption, and select 'Save Link As.../Save Target As...'</p>
-    <p>All BPMN 2.0 models were created using <%= link_to 'Bonita Open Solution', 'http://www.bonitasoft.com' %>.</p>
+    <p>All BPMN 2.0 models were created using <%= link_to 'Bonita Open Solution', 'http://www.bonitasoft.com' %>.
+    The models can be validated <%= link_to 'Here', 'http://www.webratio.com/bpmnValidation/home.do' %></p>
     
     <fieldset class="list-software">
       <legend>Here's a list of some open source software for BPMN:</legend>
