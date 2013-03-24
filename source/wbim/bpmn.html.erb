@@ -1,7 +1,7 @@
 ---
-title: Assignment 1 - Process Diagrams using BPMN 2.0
+title: Assignment 2 - Process Diagrams using BPMN 2.0
 stylesheets: wbim
-assignment: 1
+assignment: 2
 bpmn:
   hardware_retailer:
     caption: Hardware Retailer
@@ -39,26 +39,36 @@ bpmn:
       <p>
         Here, I tried out some business process models as part of the assignment.
         My friend <%= link_to 'Shoubhik', 'http://sites.google.com/site/shoubhikdebnath' %> helped me out with some of these.
-      <p>
+      </p>
       <% data.page.bpmn.each do |model, m| %>
-      <figure>
+      <a href="bpmn/<%= m['xml'] %>" data-reveal-id="<%= model %>"><%= m['caption'] %></a><br/>
+      <figure id="<%= model %>" class="reveal-modal">
         <%= image_tag "wbim/#{m['image']}" %>
         <figcaption><%= link_to m['caption'], 'bpmn/' + m['xml'] %></figcaption>
+        <a class="close-reveal-modal">&#215;</a>
       </figure>
       <% end %>
-    </article>    
-    <p>To save the XML files for the BPMN, right click on the caption, and select 'Save Link As.../Save Target As...'</p>
-    <p>All BPMN 2.0 models were created using <%= link_to 'Bonita Open Solution', 'http://www.bonitasoft.com' %>.
-    The models can be validated <%= link_to 'Here', 'http://www.webratio.com/bpmnValidation/home.do' %></p>
+      <br/>
+      <p>
+        To view the Model images, click on the captions directly.
+        <u>If any image appears blurred, right click on the image, and select 'View Image'</u>.
+        To save the XML files for the BPMN, <u>right click on the caption,
+        and select 'Save Link As.../Save Target As...'</u>.
+        Click outside the image modal to exit the viewer.
+      </p>
+      <p>All BPMN 2.0 models were created using <%= link_to 'Bonita Open Solution', 'http://www.bonitasoft.com' %>.
+      The models can be validated <%= link_to 'Here', 'http://www.webratio.com/bpmnValidation/home.do' %></p>
+    </article> 
     
-    <fieldset class="list-software">
-      <legend>Here's a list of some open source software for BPMN:</legend>
+    <article>
+      <h4>Open Source Modelling Software</h4>
+      <p>Here's a list of some open source software for BPMN</p>
       <ul class="open-source-software">
         <li class="software">Modelio</li>
         <li class="software">Bonita Open Solution</li>
         <li class="software">Yaoqiang</li>
       </ul>
-    </fieldset>
+    </article>
   </section>
   <%= partial 'assignments' %>
 </div>

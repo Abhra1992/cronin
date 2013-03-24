@@ -1,4 +1,8 @@
 @import 'base';
+@import 'foundation/components/clearing';
+article{
+  @include grid-row();
+}
 .wbim-intro{
   @include grid-column(8, $float: left);
 }
@@ -12,9 +16,17 @@ figcaption{
   text-align: center;
   font-weight: bold;
 }
-.list-software{
-  padding: 0 10px;
+//$clearing-carousel-thumb-width: 5%;
+.model{
+  //@include thumb;
 }
-.open-source-software{
+.software,
+.criterion,
+.framework{
+  position: relative;
+  left: 20px;
+}
+.open-source-software,
+.quality-criteria{
   list-style: none;
 }
