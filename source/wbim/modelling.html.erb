@@ -1,0 +1,26 @@
+---
+title: Assignment 6 - Modelling Techniques
+stylesheets: wbim
+assignment: 6
+---
+<div class="assignment view">
+  <section class="assignment-description">
+    <article>
+      <h4><%= data.page.title %></h4>
+      <p>A modeling language is any artificial language that can be used to express information or knowledge or systems in a structure that is defined by a consistent set of rules. The rules are used for interpretation of the meaning of components in the structure.</p>
+      <p><b>Graphical modeling languages</b> use a diagram technique with named symbols that represent concepts and lines that connect the symbols and represent relationships and various other graphical notation to represent constraints.</p>
+      <p><b>Textual modeling languages</b> may use standardized keywords accompanied by parameters or natural language terms and phrases to make computer-interpretable expressions.</p>
+      <br/>
+      <p>The main modelling techniques are introduced below:</p>
+      <ul class="modelling">
+        <li class="technique"><b><%= link_to 'Entity-Relationship Model', 'http://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model' %></b> : An ER model is an abstract way of describing a database. In the case of a relational database, which stores data in tables, some of the data in these tables point to data in other tables</li>
+        <li class="technique"><b><%= link_to 'UML Class Diagram', 'http://en.wikipedia.org/wiki/Class_diagram' %></b> : A class diagram in the Unified Modeling Language (UML) is a type of static structure diagram that describes the structure of a system by showing the system's classes, their attributes, operations (or methods), and the relationships among the classes.</li>
+        <li class="technique"><b><%= link_to 'Flowchart', 'http://en.wikipedia.org/wiki/Flowchart' %></b> : A flowchart is a type of diagram that represents an algorithm or process, showing the steps as boxes of various kinds, and their order by connecting them with arrows.</li>
+        <li class="technique"><b><%= link_to 'Data Flow Diagram', 'http://en.wikipedia.org/wiki/Data_flow_diagram' %></b> : A data flow diagram (DFD) is a graphical representation of the "flow" of data through an information system, modeling its process aspects.</li>
+        <li class="technique"><b><%= link_to 'Metamodeling', 'http://en.wikipedia.org/wiki/Metamodeling' %></b> : "Metamodeling" is the construction of a collection of "concepts" (things, terms, etc.) within a certain domain. A model is an abstraction of phenomena in the real world; a metamodel is yet another abstraction, highlighting properties of the model itself.</li>
+      </ul>
+      <p>More about Data Modelling can be found in <b><%= link_to 'Wikipedia', 'http://en.wikipedia.org/wiki/Data_modeling' %></b>.</p>
+    </article>
+  </section>
+  <%= partial 'assignments' %>
+</div>
