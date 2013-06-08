@@ -12,3 +12,5 @@
 
 # Ignore Sass' cache
 /.sass-cache
+
+social-engineering.html.erb
