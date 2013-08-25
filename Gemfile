@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem "middleman", "~>3.0.12"
+gem 'middleman', '~> 3.1.4'
 gem 'kramdown'
-gem 'wdm', '~>0.1'
+gem 'wdm'
 
 group :development do
-  gem 'zurb-foundation', '4.0.9'
+  gem 'zurb-foundation', '~> 4.3.1'
   gem 'compass'
 end
