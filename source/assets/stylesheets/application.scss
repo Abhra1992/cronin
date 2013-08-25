@@ -2,20 +2,24 @@
  *= require foundation
  */
 @import 'base';
+html{
+	/*@include grid-row();*/
+}
 body{
 	@include grid-column(12);
 	background: {
 		color: rgb(236, 236, 236);
 	}
 	font: {
-		family: 'Segoe UI', Helvetica, 'Liberation Sans', 'DejaVu Sans', Freesans, sans-serif;
-    size: 14px;
+		family: 'Segoe UI', Helvetica, 'Liberation Sans', 'DejaVu Sans', Freesans, sans-serif !important;
+    size: 14px !important;
 	}
 }
 header,
 .view,
 footer{
 	@include grid-row(nest);
+	margin: 0 auto;
 }
 .site-nav-title{
 	font-family: Helvetica;

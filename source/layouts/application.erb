@@ -17,13 +17,13 @@
     <% unless data.page.stylesheets.nil? %>
     <%= stylesheet_link_tag data.page.stylesheets %>
     <% end %>
-    
+
     <%= javascript_include_tag 'application' %>
     <% unless data.page.javascripts.nil? %>
     <%= javascript_include_tag data.page.javascripts %>
     <% end %>
-    
-    <%= favicon_tag 'photo.jpg' %>
+
+    <%= favicon_tag 'me.png' %>
   </head>
 
   <body class="<%= page_classes %>">

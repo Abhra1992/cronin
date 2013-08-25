@@ -3,3 +3,8 @@
 .credits-components{
   @include grid-column(6, $float: left);
 }
+.credits-components{
+  > ul{
+    list-style: none;
+  }
+}

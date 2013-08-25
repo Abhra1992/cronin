@@ -1,24 +1,31 @@
 ---
 title: Contact
-stylesheets: contact
+stylesheets:
+- contact
+- webicons
 ---
 <div class="contact view">
   <section class="contact-intro">
     <h4>Get in Touch</h4>
     <p>
-      So you want to contact me, right? Well, let's see. If you want to say hello, ask a question or 
-      share your thoughts, and succeed in the task of filling out the form to the right then you might just 
-      be able to do exactly that. I'll receive your message, read it, tear it up and throw it dramatically 
-      into the fire. Oh, and then I'll respond, of course. If you don't think you can handle it, you 
-      could always just pop in an <u><%= link_to 'email', 'mailto:abhra.1992@live.com', :class => 'email' %></u>. 
+      So you want to contact me, right? Well, let's see. If you want to say hello, ask a question or
+      share your thoughts, and succeed in the task of filling out the form to the right then you might just
+      be able to do exactly that. I'll receive your message, read it, tear it up and throw it dramatically
+      into the fire. Oh, and then I'll respond, of course. If you don't think you can handle it, you
+      could always just pop in an <u><%= link_to 'email', 'mailto:abhra.1992@live.com', :class => 'email' %></u>.
     </p>
     <p>
-      If you are writing because you think I would be a good fit for your project, please include as 
-      much relevant detail as possible, how you see I may best be of help, and the like. For everything 
+      If you are writing because you think I would be a good fit for your project, please include as
+      much relevant detail as possible, how you see I may best be of help, and the like. For everything
       else, type away, my friends. Type away!
     </p>
     <p>
-      Not a contact form person? Feel free to find me on Facebook, Linkedin, or Twitter. 
+      Not a contact form person? Feel free to find me on Facebook, Linkedin, or Twitter.
+    </p>
+    <p>
+      <% data.contact.each do |contact, address| %>
+      <%= link_to  contact, address, :class => "webicon #{contact.downcase}" %>
+      <% end %>
     </p>
   </section>
   <section class="contact-form-section">
