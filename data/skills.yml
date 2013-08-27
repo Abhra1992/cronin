@@ -1,10 +1,11 @@
 ---
-C++: 80
-XML: 80
-Ruby: 70
-C#: 65
-HTML/CSS: 80
-Python: 60
-JavaScript: 50
-PHP: 60
-UML: 50
+Programming:
+  C++: 80
+  Ruby: 70
+  C#: 65
+  Python: 60
+Web:
+  XML: 80
+  HTML/CSS: 80
+  PHP: 60
+  JavaScript: 50

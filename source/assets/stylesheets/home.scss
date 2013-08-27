@@ -1,6 +1,4 @@
 @import 'base';
-@import "foundation/components/buttons";
-@import "foundation/components/button-groups";
 .hello-intro{
   @include grid-column(6, $float: left);
 }

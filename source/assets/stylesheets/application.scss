@@ -2,9 +2,6 @@
  *= require foundation
  */
 @import 'base';
-html{
-	/*@include grid-row();*/
-}
 body{
 	@include grid-column(12);
 	background: {

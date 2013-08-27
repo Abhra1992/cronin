@@ -1,26 +1,20 @@
 ---
 title: Projects
 stylesheets: projects
-projects:
-  label:
-    name: Project Name
-    url: #
-    text: Project Description
 ---
-<div class="projects view">  
+<div class="projects view">
   <section class="projects-intro">
     <h4>Projects</h4>
     <p>
-      A list of stuff I've worked on and contributed to till date. Oh, and this does not 
-      include the numerous pranks and jokes I've cracked.
+      A list of stuff I've worked on and contributed to till date. I personally attempt to use a different set of technologies for each individual project.
     </p>
   </section>
   <section class="project-articles">
-    <ul class="block-grid articles-list three-up">
-      <% data.page.projects.each do |_, p| %>
+    <ul class="small-block-grid-2 large-block-grid-3 articles-list">
+      <% data.projects.each do |_, p| %>
       <li class="panel radius project">
         <i><%= link_to p[:name], p[:url], :class => 'project-url' %></i>
-        <p><%= p[:text] %></p>
+        <p><%= p[:text] %><br/>--<%= p[:lang] %>--</p>
       </li>
       <% end %>
     </ul>
