@@ -1,0 +1,16 @@
+@import 'base';
+.about-intro,
+.dev-graph,
+.skills-graph{
+  @include grid-column(4);
+}
+.about-intro{
+  line-height: 20px;
+  padding: 20px;
+}
+.skill-label{
+  display: block;
+}
+.skill-meter{
+  height: 12px;
+}
