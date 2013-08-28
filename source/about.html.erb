@@ -4,6 +4,7 @@ stylesheets: about
 ---
 <div class="about view">
   <section class="about-intro">
+    <h4>About Me</h4>
     <p>
       Although I am skilled in several disciplines, I'm more of a dynamic and multi-skilled
       Web Developer and Programmer with a passion for creating innovative stuff, exploring
@@ -13,12 +14,16 @@ stylesheets: about
       I also use pens, sheets of paper and coffee, to some extent.
       An interesting piece of trivia, I'm also deeply dedicated to music and mixes, especially those involving drums.
     </p>
+    <p>
+      I have also been a coordinator of the Website Information and Networks Group (WING) at IIT Mandi
+      for about 2 years, where I learnt interesting stuff about computers and the Web.
+    </p>
   </section>
   <section class="dev-graph">
     <% data.dev.each do |area, dev| %><h5><%= area %></h5>
       <% dev.each do |item, strength| %>
-      <span class="secondary label radius skill-label"><%= item %></span>
-      <div class="nice radius progress success skill-meter"><span class="meter" style="width: <%= strength %>%"></span></div>
+      <span class="secondary label radius"><%= item %> (<%= strength %>/100)</span>
+      <div class="nice radius progress success meter"><span class="meter" style="width: <%= strength %>%"></span></div>
       <% end %>
     <% end %>
   </section>
@@ -26,8 +31,8 @@ stylesheets: about
     <% data.skills.each do |area, skills| %>
       <h5><%= area %></h5>
       <% skills.each do |skill, strength| %>
-      <span class="secondary label radius skill-label"><%= skill %></span>
-      <div class="nice radius progress success skill-meter"><span class="meter" style="width: <%= strength %>%"></span></div>
+      <span class="secondary label radius"><%= skill %> (<%= strength %>/100)</span>
+      <div class="nice radius progress success meter"><span class="meter" style="width: <%= strength %>%"></span></div>
       <% end %>
     <% end %>
   </section>

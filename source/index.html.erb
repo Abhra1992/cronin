@@ -29,7 +29,7 @@ stylesheets:
     <h5>Find out what I'm up to:</h5>
     <div class="social panel">
       <% data.contact.each do |contact, address| %>
-      <%= link_to  contact, address, :class => "webicon #{contact.downcase}" %>
+      <%= link_to  contact, address, :class => "webicon large #{contact.downcase}" %>
       <% end %>
     </div>
   </section>
