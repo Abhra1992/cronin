@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'middleman', '~> 3.1.4'
+gem 'middleman', '~> 3.1.5'
 gem 'kramdown'
 gem 'wdm'
 
