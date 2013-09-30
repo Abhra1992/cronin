@@ -14,7 +14,7 @@ stylesheets: projects
       <% data.projects.each do |_, p| %>
       <li class="panel radius project">
         <i><%= link_to p[:name], p[:url], :class => 'project-url' %></i>
-        <p><%= p[:text] %><br/>--<%= p[:lang] %>--</p>
+        <p><%= p[:text] %><br/>--<%= p[:lang] %>-- <%= p[:year] %></p>
       </li>
       <% end %>
     </ul>

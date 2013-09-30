@@ -1,61 +1,73 @@
 ---
 a:
-  name: Music Library Manager (2010)
+  name: Music Library Manager
+  year: 2010
   url: #
   text: A MVP of a iTunes-like music library manager for Windows
   lang: C++
 b:
-  name: IIT Mandi Website (2011)
+  name: IIT Mandi Website
+  year: 2011
   url: http://iitmandi.ac.in
   text: Official website of my Undergraduate university - IIT Mandi
   lang: HTML, JavaScript
 c:
-  name: Extended Leave Management System (2011)
+  name: Leave Management System (LMS)
+  year: 2011
   url: #
   text: Leave Management System for faculty and research scholars at IIT Mandi
   lang: PHP, MySQL
 d:
-  name: Basin Boundary Structures for 3D Nonlinear Systems (2012)
+  name: Basin Boundary Structures for 3D Nonlinear Systems
+  year: 2012
   url: #
   text: Strange Attractors and their behavior - numerical analysis
   lang: Python
 e:
-  name: Adaptive Intellisense Traffic Signal Control System (2012)
+  name: Adaptive Intellisense Traffic Signal Control System
+  year: 2012
   url: #
   text: Mountain Traffic Signal System based on Instantaneous Traffic Density
   lang: Arduino C
 f:
-  name: Analysis of Intrusion Detection and Attack Proliferation in Computer Networks (2012)
+  name: Analysis of Intrusion Detection and Attack Proliferation in Computer Networks
+  year: 2012
   url: #
   text: Probabilistic Analysis of spread of computer infections
   lang: Matlab
 g:
-  name: Biomedical Information Analysis System (2012)
+  name: Biomedical Information Analysis System (BIAS)
+  year: 2012
   url: #
   text: Centralised medical services information repository
   lang: PHP, MySQL
 h:
-  name: Distributed Banking System (2013)
-  url: #
-  text: A banking system facilitating secure concurrent transactions - withdrawal, deposit and transfer
+  name: Core Banking System (CBS)
+  year: 2013
+  url: https://github.com/vikhyat/CoreBankingSystem
+  text: A distributed banking system facilitating secure concurrent transactions - withdrawal, deposit and transfer
   lang: Go, Redis
 i:
-  name: Performance analysis of dictionary implementations (2013)
-  url: #
-  text: Profiling and comparison of performances of 6 different implementations of dictionary ADT
+  name: Profiling Dictionary ADTs
+  year: 2013
+  url: https://github.com/Abhra1992/dictionary
+  text: Performance analysisand comparison of performances of 6 different implementations of the dictionary ADT
   lang: C#.NET
 j:
-  name: Distibuted Database Blog (2013)
+  name: Distibuted Database Blog
+  year: 2013
   url: #
   text: Implementation of a blog running on a distributed MySQL cluster
   lang: Ruby on Rails, MySQL
 k:
-  name: Decision Making Strategies (2013)
+  name: Decision Making Strategies
+  year: 2013
   url: #
   text: Approaching the binary choice problem using Game theory
   lang: Python
 l:
-  name: Internship @ Microsoft (2013)
+  name: Internship @ Microsoft
+  year: 2013
   url: #
   text: Mapping Autosuggest queries to solved problems in technical support sites
   lang: Ruby, Python, SQL Server
