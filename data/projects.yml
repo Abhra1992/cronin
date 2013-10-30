@@ -13,8 +13,8 @@ b:
   lang: HTML, JavaScript
 c:
   name: Leave Management System (LMS)
-  year: 2011
-  url: #
+  year: 2011/12
+  url: https://github.com/Abhra1992/brivdiena
   text: Leave Management System for faculty and research scholars at IIT Mandi
   lang: PHP, MySQL
 d:
@@ -38,7 +38,7 @@ f:
 g:
   name: Biomedical Information Analysis System (BIAS)
   year: 2012
-  url: #
+  url: https://github.com/Abhra1992/bias
   text: Centralised medical services information repository
   lang: PHP, MySQL
 h:
