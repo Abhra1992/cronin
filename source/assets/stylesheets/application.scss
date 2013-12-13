@@ -1,6 +1,6 @@
-﻿/*
- *= require foundation
- */
+﻿//
+//= require foundation
+//
 @import 'base';
 body{
 	@include grid-column(12);

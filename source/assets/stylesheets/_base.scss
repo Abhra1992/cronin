@@ -1,7 +1,11 @@
-﻿@import 'compass/css3';
-@import 'foundation/components/global';
+﻿@import 'compass';
+@import 'foundation/settings';
 @import 'foundation/components/grid';
 @import 'foundation/components/block-grid';
+
+@mixin outline {
+  outline: 0.5px solid black;
+}
 
 @mixin social-button-colors($color, $hover-color) {
   background: $color;

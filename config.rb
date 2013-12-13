@@ -2,9 +2,6 @@
 # Compass
 ###
 
-# Require Zurb Foundation SCSS
-require 'zurb-foundation'
-
 # Susy grids in Compass
 # First: gem install susy
 # require 'susy'
@@ -57,9 +54,7 @@ set :markdown, :layout_engine => :erb
 # end
 
 set :css_dir, 'assets/stylesheets'
-
 set :js_dir, 'assets/javascripts'
-
 set :images_dir, 'assets/images'
 
 # Build-specific configuration
@@ -69,7 +64,7 @@ configure :build do
     config.sass_options = { :debug_info => false }
     config.sass_options = { :line_comments => false }
     config.output_style = :compact
-  end 
+  end
   activate :minify_css
 
   # Minify Javascript on build

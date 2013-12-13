@@ -1,5 +1,5 @@
 //= require vendor/custom.modernizr
-//= require jquery
+//= require vendor/jquery
 //= require foundation
 (function($, window, undefined_) {
   "use strict";
