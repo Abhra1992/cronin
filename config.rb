@@ -7,9 +7,9 @@
 # require 'susy'
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+compass_config do |config|
+  config.add_import_path 'bower/foundation/scss'
+end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -18,7 +18,6 @@ page '*', :layout => :application
 
 # Use Kramdown as template engine
 require 'kramdown'
-set :markdown_engine, :kramdown
 set :markdown, :layout_engine => :erb
 
 # Per-page layout changes:
@@ -56,6 +55,10 @@ set :markdown, :layout_engine => :erb
 set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
+
+ready do
+  sprockets.append_path 'bower/foundation/js'
+end
 
 # Build-specific configuration
 configure :build do

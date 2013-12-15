@@ -1,15 +1,17 @@
 @import 'base';
 .about-intro,
+.music-intro,
+.programming-intro,
 .dev-graph,
 .skills-graph{
   @include grid-column(4);
-}
-.about-intro{
-  line-height: 20px;
 }
 .label{
   display: block;
 }
 .meter{
   height: 12px;
+}
+.pane{
+  text-align: center;
 }

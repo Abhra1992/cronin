@@ -1,39 +1,42 @@
 ---
 title: About
-stylesheets: about
+stylesheets:
+- about
+- webicons
 ---
 <div class="about view">
   <section class="about-intro">
     <h4>About Me</h4>
     <p>
       Although I am skilled in several disciplines, I'm more of a dynamic and multi-skilled
-      Web Developer and Programmer with a passion for creating innovative stuff, exploring
-      and experimenting new things, regardless of the brief.
-    </p>
-    <p>
-      I also use pens, sheets of paper and coffee, to some extent.
-      An interesting piece of trivia, I'm also deeply dedicated to music and mixes, especially those involving drums.
-    </p>
-    <p>
-      I have also been a coordinator of the <%= link_to 'Website Information and Networks Group', 'http://facebook.com/wing.iitmandi' %>
-      (WING) at IIT Mandi for about 2 years, where I learnt interesting stuff about computers and the Web.
+      Web Developer and Programmer with a passion for creating innovative and eccentric stuff, exploring
+      and experimenting with new things, regardless of the brief.
     </p>
   </section>
-  <section class="dev-graph">
-    <% data.dev.each do |area, dev| %><h5><%= area %></h5>
-      <% dev.each do |item, strength| %>
-      <span class="secondary label radius"><%= item %> (<%= strength %>/100)</span>
-      <div class="nice radius progress success meter"><span class="meter" style="width: <%= strength %>%"></span></div>
+  <section class="music-intro">
+    <h4>Music</h4>
+    <p>
+      An interesting piece of trivia, I'm deeply dedicated to music and mixes.
+      My favorite generes include Pop, Blues, Dance, Pop Rock, Alternative Rock, Indie Rock and Hip-Hop.
+      Find out my favorite artists and tracks in my music profile.
+    </p>
+    <div class="music pane">
+      <% data.music.each do |music, address| %>
+      <%= link_to music, address, :class => "webicon large #{music.downcase}" %>
       <% end %>
-    <% end %>
+    </div>
   </section>
-  <section class="skills-graph">
-    <% data.skills.each do |area, skills| %>
-      <h5><%= area %></h5>
-      <% skills.each do |skill, strength| %>
-      <span class="secondary label radius"><%= skill %> (<%= strength %>/100)</span>
-      <div class="nice radius progress success meter"><span class="meter" style="width: <%= strength %>%"></span></div>
+  <section class="programming-intro">
+    <h4>Programming</h4>
+    <p>
+      I have been a coordinator of the <%= link_to 'Website Information and Networks Group', 'http://facebook.com/wing.iitmandi' %>
+      (WING) at IIT Mandi for about 2 years, where I learnt interesting cool stuff about computers and the Web. I program mainly in
+      C#.NET, Ruby and JavaScript.
+    </p>
+    <div class="programming pane">
+      <% data.programming.each do |programming, address| %>
+      <%= link_to programming, address, :class => "webicon large #{programming.downcase}" %>
       <% end %>
-    <% end %>
+    </div>
   </section>
 </div>

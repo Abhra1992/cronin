@@ -1,12 +1,12 @@
 @import 'base';
 .hello-intro{
-  @include grid-column(6, $float: left);
+  @include grid-column(6);
 }
 .display-pic{
-  @include grid-column(2, $float: left);
+  @include grid-column(2);
   margin-top: 10px;
 }
 .home-social{
-  @include grid-column(4, $float: left);
+  @include grid-column(4);
   text-align: center;
 }
