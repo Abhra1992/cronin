@@ -6,10 +6,3 @@
 @mixin outline {
   outline: 0.5px solid black;
 }
-
-@mixin social-button-colors($color, $hover-color) {
-  background: $color;
-  &:hover{
-    background: $hover-color;
-  }
-}
