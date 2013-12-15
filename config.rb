@@ -58,6 +58,7 @@ set :images_dir, 'assets/images'
 
 ready do
   sprockets.append_path 'bower/foundation/js'
+  sprockets.append_path 'bower/foundation/scss'
 end
 
 # Build-specific configuration
@@ -66,7 +67,7 @@ configure :build do
   compass_config do |config|
     config.sass_options = { :debug_info => false }
     config.sass_options = { :line_comments => false }
-    config.output_style = :compact
+    config.output_style = :compressed
   end
   activate :minify_css
 

@@ -1,12 +1,8 @@
-﻿//
-//= require foundation
-//
+﻿//= require foundation
 @import 'base';
 body{
 	@include grid-column(12);
-	background: {
-		color: rgb(236, 236, 236);
-	}
+	background: rgb(236, 236, 236);
 	font: {
 		family: 'Segoe UI', Helvetica, 'Liberation Sans', 'DejaVu Sans', Freesans, sans-serif !important;
     size: 14px !important;
@@ -28,9 +24,7 @@ nav.top-bar{
 	min-height: 470px;
 }
 footer{
-	background: {
-		color: rgb(201, 180, 159);
-	}
+	background: rgb(201, 180, 159);
 	padding: 10px;
 	text-align: center;
 }
