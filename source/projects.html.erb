@@ -10,7 +10,7 @@ stylesheets: projects
     </p>
   </section>
   <section class="project-articles">
-    <ul class="small-block-grid-2 large-block-grid-3 articles-list">
+    <ul class="articles-list">
       <% data.projects.each do |_, p| %>
       <li class="panel radius project">
         <i><%= link_to p[:name], p[:url], :class => 'project-url' %></i>

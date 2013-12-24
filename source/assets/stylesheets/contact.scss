@@ -1,4 +1,6 @@
-@import 'base';
+@import 'settings';
+@import 'foundation/components/grid';
+
 .email{
   @include grid-column(3, $offset: 1);
 }

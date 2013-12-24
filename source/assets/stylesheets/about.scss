@@ -1,7 +1,9 @@
-@import 'base';
+@import 'settings';
+@import 'foundation/components/grid';
+
 .about-intro,
 .music-intro,
-.programming-intro,
+.code-intro,
 .dev-graph,
 .skills-graph{
   @include grid-column(4);
