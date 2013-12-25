@@ -1,11 +1,11 @@
 ---
 On The Desktop:
-  C++: 80
-  Ruby: 70
-  C#: 65
+  C#: 80
+  Ruby: 75
+  C++: 75
   Python: 60
 On The Web:
   XML: 80
   HTML/CSS: 80
   PHP: 60
-  JavaScript: 50
+  JavaScript: 60

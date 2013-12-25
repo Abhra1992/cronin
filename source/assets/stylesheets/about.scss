@@ -3,17 +3,9 @@
 
 .about-intro,
 .music-intro,
-.code-intro,
-.dev-graph,
-.skills-graph{
+.code-intro {
   @include grid-column(4);
 }
-.label{
-  display: block;
-}
-.meter{
-  height: 12px;
-}
-.pane{
+.pane {
   text-align: center;
 }
