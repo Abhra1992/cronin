@@ -1,2 +1,3 @@
-//= require vendor/custom.modernizr
-//= require vendor/jquery
+//= require modernizr
+//= require jquery
+//= require foundation.min
