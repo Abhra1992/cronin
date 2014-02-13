@@ -9,8 +9,8 @@ stylesheets:
     <h4>Get in Touch for Thoughts over a Coffee - or just say Hello</h4>
     <p>
       So you want to contact me, right? Well, let's see. If you want to say hello, ask a question or share your thoughts,
-      and succeed in the task of filling out an <%= link_to 'EMAIL', 'mailto:me@abhra.in', :class => 'email-link' %>
-      form then you might just be able to do exactly that. I'll receive your message, read it, tear it up and throw
+      and succeed in the task of drafting an <%= mail_to 'me@abhra.in', 'EMAIL', class: 'email-link' %>
+      then you might just be able to do exactly that. I'll receive your message, read it, tear it up and throw
       it dramatically into the fire. Oh, and then I'll respond, of course.
     </p>
     <p>
@@ -25,11 +25,11 @@ stylesheets:
     </p>
     <p class="social-icons">
       <% data.contact.each do |contact, address| %>
-      <%= link_to contact, address, :class => "webicon large #{contact.downcase}" %>
+      <%= link_to contact, address, class: "webicon large #{contact.downcase}" %>
       <% end %>
     </p>
   </section>
   <section class="email">
-    <%= link_to (image_tag 'mail.png'), 'mailto:me@abhra.in', :class => "mail-logo" %>
+    <%= mail_to 'me@abhra.in', (image_tag 'mail.png'), class: "mail-logo" %>
   </section>
 </div>

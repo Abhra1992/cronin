@@ -22,7 +22,7 @@ stylesheets:
     </p>
     <div class="music pane">
       <% data.music.each do |music, address| %>
-      <%= link_to music, address, :class => "webicon large #{music.downcase}" %>
+      <%= link_to music, address, class: "webicon large #{music.downcase}" %>
       <% end %>
     </div>
   </section>
@@ -35,7 +35,7 @@ stylesheets:
     </p>
     <div class="code pane">
       <% data.code.each do |code, address| %>
-      <%= link_to code, address, :class => "webicon large #{code.downcase}" %>
+      <%= link_to code, address, class: "webicon large #{code.downcase}" %>
       <% end %>
     </div>
   </section>
