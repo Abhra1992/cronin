@@ -2,21 +2,21 @@
 title: Projects
 stylesheets: projects
 ---
-<div class="projects view">
+<main class="projects view">
   <section class="projects-intro">
     <h4>Projects</h4>
     <p>
-      A list of stuff I've worked on and contributed to till date. I personally attempt to use a different set of technologies for each individual project.
+      A list of stuff I've worked on and contributed to till date. I personally attempt to use a different set of technologies for each individual project. Each new project presents the opportunity to push limits creatively and technically.
     </p>
   </section>
   <section class="project-articles">
     <ul class="articles-list">
       <% data.projects.each do |_, p| %>
-      <li class="panel radius project">
+      <li class="radius project">
         <i><%= link_to p[:name], p[:url], :class => 'project-url' %></i>
         <p><%= p[:text] %><br/>--<%= p[:lang] %>-- <%= p[:year] %></p>
       </li>
       <% end %>
     </ul>
   </section>
-</div>
+</main>

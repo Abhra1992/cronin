@@ -1,5 +1,0 @@
-language: ruby
-rvm: 2.0.0
-before_install:
-  - gem update --system 2.1.11
-script: bundle exec middleman build

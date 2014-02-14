@@ -4,7 +4,7 @@ stylesheets:
 - home
 - webicons
 ---
-<div class="home view">
+<main class="home view">
   <section class="display-pic">
     <%= image_tag 'photo.jpg', alt: 'This is how I look' %>
   </section>
@@ -13,16 +13,18 @@ stylesheets:
     <p>
       My name is ABHRA BASAK. I am a 21-year old Computer Science Undergraduate
       in <b><%= link_to 'IIT Mandi', 'http://iitmandi.ac.in' %></b> (living in Kolkata).
-      I am passionate about Web Technologies, and also enjoy Programming, Football, Mathematics, Action Movies and Pop Music.
+      I am passionate about Web Technologies, and also enjoy Programming, Football, Puzzles, Action Movies and Pop Music.
       I'm glad you visited my website. Have a look around.
     </p>
     <p>
-      I'm always looking for ideas that might make my work more creative. I'm especially interested in Computer
-      Technologies and the Web. That's why I've decided to get primarily involved in Software Development, particularly Web-based.
-      It is my main focus today, and it will remain so hopefully in the long term.
+      I'm always looking for ideas that might make my work more creative. In my free time, I read developers' blogs and build sotware that is easy to use. I derive inspiration from popular music, and love listening to Internet Radio.
     </p>
     <p>
-      I have also recently undertaken an internship at <b><%= link_to 'Microsoft', 'http://microsoft.com' %></b> IDC (Hyderabad), in <b><%= link_to 'Bing', 'http://bing.com' %></b> Tech-Segments, who have gladly extended a full-time offer to me. My dream of joining Microsoft one day has finally come true.
+      I have recently undertaken an internship with <b><%= link_to 'Microsoft', 'http://microsoft.com' %></b> IDC (Hyderabad),
+      in <b><%= link_to 'Bing', 'http://bing.com' %></b> Tech-Segments, who have gladly extended a full-time offer to me.
+      I am currently involved in building an open-source framework,
+      <b><%= link_to 'HazelWard', 'https://github.com/Abhra1992/hazelward' %></b> for NVIDIA CUDA,
+      and am looking for contributors for the same.
     </p>
   </section>
   <section class="home-social">
@@ -33,4 +35,4 @@ stylesheets:
       <% end %>
     </div>
   </section>
-</div>
+</main>
