@@ -6,20 +6,22 @@ stylesheets: credits
   <section class="credits-intro">
     <h4>Credits</h4>
     <p>
-      This website has been proudly hand-crafted by me using <b><%= link_to 'Foundation by Zurb', 'http://foundation.zurb.com' %></b>,
-      and <b><%= link_to 'The Middleman', 'http://middlemanapp.com' %></b>,
-      taking advantage of the power of <b><%= link_to 'Ruby', 'http://ruby-lang.org' %></b>
-      and <b><%= link_to 'Compass', 'http://compass-style.org' %></b>.
-      It is hosted using <b><%= link_to 'GitHub Pages', 'http://pages.github.com' %></b>.
+      This website has been proudly hand-crafted by me using
+      <strong><%= link_to 'Foundation by Zurb', 'http://foundation.zurb.com' %></strong>,
+      and <strong><%= link_to 'The Middleman', 'http://middlemanapp.com' %></strong>,
+      taking advantage of the power of <strong><%= link_to 'Ruby', 'http://ruby-lang.org' %></strong>
+      and <strong><%= link_to 'Compass', 'http://compass-style.org' %></strong>.
+      It is hosted using <strong><%= link_to 'GitHub Pages', 'http://pages.github.com' %></strong>.
     </p>
     <p>All Trademarks belong to their respective Owners.</p>
-  </section>
-  <section class="credits-components">
-    <h6>Other components</h6>
-    <ul>
+    <h6 class="other-components">Other components</h6>
+    <ul class="credits-list">
       <% data.credits.each do |source, url| %>
       <li><%= link_to source, url %></li>
       <% end %>
     </ul>
+  </section>
+  <section class="credits-components">
+
   </section>
 </div>

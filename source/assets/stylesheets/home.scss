@@ -1,14 +1,18 @@
 @import 'settings';
 @import 'foundation/components/grid';
+@inport 'base';
 
-.hello-intro{
+.hello-intro {
   @include grid-column(6);
 }
-.display-pic{
+.tagline {
+  text-align: center;
+}
+.display-pic {
   @include grid-column(2);
   margin-top: 10px;
 }
-.home-social{
+.home-social {
   @include grid-column(4);
   text-align: center;
 }
