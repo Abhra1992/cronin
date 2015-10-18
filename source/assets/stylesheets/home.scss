@@ -1,6 +1,6 @@
 @import 'settings';
 @import 'foundation/components/grid';
-@inport 'base';
+@import 'base';
 
 .hello-intro {
   @include grid-column(6);

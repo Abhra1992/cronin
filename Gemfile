@@ -1,7 +1,7 @@
 # If you have OpenSSL installed, we recommend updating
 # the following line to use "https"
-source 'https://rubygems.org'
-ruby '2.0.0'
+source 'http://rubygems.org'
+ruby '2.1.5'
 
 gem "middleman", "~>3.2.0"
 gem 'thin'
