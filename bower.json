@@ -1,0 +1,23 @@
+{
+  "name": "cronin",
+  "homepage": "abhra.in",
+  "authors": [
+    "Abhra Basak <abhra@outlook.in>"
+  ],
+  "description": "ABHRA's Website",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "source/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.3"
+  }
+}
