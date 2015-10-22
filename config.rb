@@ -58,6 +58,7 @@ set :images_dir, 'assets/images'
 
 ready do
   sprockets.append_path 'bower/foundation/js'
+  sprockets.append_path 'bower/foundation/js/vendor'
   sprockets.append_path 'bower/foundation/scss'
 end
 
