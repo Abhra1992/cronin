@@ -10,6 +10,6 @@ stylesheets:
     <p>Here is an overview of my development and coding skills. Have a look at my GitHub profile for some code samples.</p>
     <%= partial 'layouts/components/iconpane', locals: { itemtype: data.code.id, items: data.code.icons } %>
   </section>
-  <%= partial 'layouts/components/graph', locals: { graphdata: data.dev } %>
-  <%= partial 'layouts/components/graph', locals: { graphdata: data.skills } %>
+  <%= build_graph data.dev %>
+  <%= build_graph data.skills %>
 </main>

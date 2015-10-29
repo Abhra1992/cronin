@@ -23,7 +23,7 @@ stylesheets:
       Not a contact form person? If you don't think you can handle it, use the icons below to track me
       around the world. It's not too hard to find me.
     </p>
-    <%= partial 'layouts/components/social', locals: { contacts: data.contact, classnames: "social-icons" } %>
+    <%= build_social_contacts data.contact, "social-icons" %>
   </section>
   <%= partial 'layouts/components/email' %>
 </main>

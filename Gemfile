@@ -5,6 +5,7 @@ ruby '2.1.5'
 
 gem "middleman", "~>3.4.0"
 gem 'thin'
+gem "middleman-vcard"
 
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.4.3"

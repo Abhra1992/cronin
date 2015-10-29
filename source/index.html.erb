@@ -32,6 +32,6 @@ stylesheets:
   </section>
   <section class="home-social">
     <h5>Find out what I'm up to:</h5>
-    <%= partial 'layouts/components/social', locals: { contacts: data.contact, classnames: "social panel" } %>
+    <%= build_social_contacts data.contact, "social panel" %>
   </section>
 </main>

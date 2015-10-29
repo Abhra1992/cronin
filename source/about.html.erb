@@ -13,6 +13,6 @@ stylesheets:
       and experimenting with new things, regardless of the brief.
     </p>
   </section>
-  <%= partial 'layouts/components/intropane', locals: { intro: data.music } %>
-  <%= partial 'layouts/components/intropane', locals: { intro: data.code } %>
+  <%= build_intro data.music %>
+  <%= build_intro data.code %>
 </main>

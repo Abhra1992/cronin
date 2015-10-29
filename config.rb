@@ -56,6 +56,8 @@ set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
 
+# require "middleman-vcard"
+
 ready do
   sprockets.append_path 'bower/foundation/js'
   sprockets.append_path 'bower/foundation/js/vendor'
