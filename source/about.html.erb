@@ -13,30 +13,6 @@ stylesheets:
       and experimenting with new things, regardless of the brief.
     </p>
   </section>
-  <section class="music-intro">
-    <h4>Music</h4>
-    <p>
-      An interesting piece of trivia, I'm deeply dedicated to music and mixes.
-      My favorite generes include Pop, Blues, Dance, Pop Rock, Alternative Rock, Indie Rock and Hip-Hop.
-      Find out my favorite artists and tracks in my music profile.
-    </p>
-    <div class="music pane">
-      <% data.music.each do |music, address| %>
-      <%= link_to music, address, class: "webicon large #{music.downcase}" %>
-      <% end %>
-    </div>
-  </section>
-  <section class="code-intro">
-    <h4>Code</h4>
-    <p>
-      I have been a coordinator of the <%= link_to 'Website Information and Networks Group', 'http://facebook.com/wing.iitmandi' %>
-      (WING) at IIT Mandi for over 2 years, where I learnt interesting cool stuff about computers and the Web. I program mainly in
-      C#.NET, Ruby and JavaScript.
-    </p>
-    <div class="code pane">
-      <% data.code.each do |code, address| %>
-      <%= link_to code, address, class: "webicon large #{code.downcase}" %>
-      <% end %>
-    </div>
-  </section>
+  <%= partial 'layouts/components/intropane', locals: { intro: data.music } %>
+  <%= partial 'layouts/components/intropane', locals: { intro: data.code } %>
 </main>

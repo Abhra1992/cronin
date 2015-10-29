@@ -23,13 +23,7 @@ stylesheets:
       Not a contact form person? If you don't think you can handle it, use the icons below to track me
       around the world. It's not too hard to find me.
     </p>
-    <p class="social-icons">
-      <% data.contact.each do |contact, address| %>
-      <%= link_to contact, address, class: "webicon large #{contact.downcase}" %>
-      <% end %>
-    </p>
+    <%= partial 'layouts/components/social', locals: { contacts: data.contact, classnames: "social-icons" } %>
   </section>
-  <section class="email">
-    <%= mail_to 'me@abhra.in', (image_tag 'mail.png'), class: "mail-logo" %>
-  </section>
+  <%= partial 'layouts/components/email' %>
 </main>

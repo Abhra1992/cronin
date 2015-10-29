@@ -63,6 +63,7 @@ ready do
 end
 
 ignore 'bower/*'
+ignore 'helpers/*'
 
 # Build-specific configuration
 configure :build do

@@ -1,0 +1,5 @@
+<div class="<%= itemtype %> pane">
+  <% items.each do |item, address| %>
+  <%= link_to item, address, class: "webicon large #{item.downcase}" %>
+  <% end %>
+</div>

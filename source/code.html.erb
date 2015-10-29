@@ -8,23 +8,8 @@ stylesheets:
   <section class="skills-intro">
     <h4>Code/Skills</h4>
     <p>Here is an overview of my development and coding skills. Have a look at my GitHub profile for some code samples.</p>
+    <%= partial 'layouts/components/iconpane', locals: { itemtype: data.code.id, items: data.code.icons } %>
   </section>
-  <section class="dev-graph">
-    <% data.dev.each do |area, dev| %>
-    <h5><%= area %></h5>
-    <% dev.each do |item, strength| %>
-    <span class="secondary label radius"><%= item %> (<%= strength %>/100)</span>
-    <div class="nice radius progress success meter"><span class="meter" style="width: <%= strength %>%"></span></div>
-    <% end %>
-    <% end %>
-  </section>
-  <section class="skills-graph">
-    <% data.skills.each do |area, skills| %>
-    <h5><%= area %></h5>
-    <% skills.each do |skill, strength| %>
-    <span class="secondary label radius"><%= skill %> (<%= strength %>/100)</span>
-    <div class="nice radius progress success meter"><span class="meter" style="width: <%= strength %>%"></span></div>
-    <% end %>
-    <% end %>
-  </section>
+  <%= partial 'layouts/components/graph', locals: { graphdata: data.dev } %>
+  <%= partial 'layouts/components/graph', locals: { graphdata: data.skills } %>
 </main>
